@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/Scenario4/style.css'%}">
+</head>
+<body style="background-color:black;">
+    <!-- The video -->
+    <div>
+        <video autoplay muted id="myVideo">
+            <source id="mySource" src="Парогенератор.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!-- Optional: some overlay text to describe the video -->
+    <p style="color:white;font-size:40px;">Демонстрация аварии – обесточивания ЯППУ</p>
+
+    <div class="return">
+                <input id="returnButton" type="image" src="{% static 'images/backButton.png' %}" onclick="history.back()"/>
+            </div>
+</body>
+</html>
