@@ -2,16 +2,18 @@
 {% load static %}
 <html>
 <head>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+<!--  <link rel="stylesheet" href="{% static 'css/Demo/Страница-2.css' %}" media="screen">-->
+<!--  <link rel="stylesheet" href="{% static 'css/Demo/nicepage.css' %}" media="screen">-->
+      <link rel="stylesheet" href="{% static 'css/Demo/style.css' %}">
 
-  <link rel="stylesheet" href="{% static 'css/Demo/Страница-2.css' %}" media="screen">
-  <link rel="stylesheet" href="{% static 'css/Demo/nicepage.css' %}" media="screen">
 </head>
-<body background="{% static 'images/background.png'%}">
-  <section class="u-align-center u-clearfix u-image u-shading u-section-1 main-menu">
-    <div class="u-align-center u-clearfix u-sheet u-sheet-1 ">
-      <h2 class="u-text u-text-default u-text-1">Выберите сценарий</h2>
-      <a href="file:///G:\Работа\DevOps\Atomic\test\index.html#" class="u-border-none u-btn u-button-style u-palette-4-light-3 u-btn-1"> Демонстрация групп оборудования</a>
-      <a href="file:///G:\Работа\DevOps\Atomic\drobilka\index.html?file=earth.mp4" class="u-border-none u-btn u-button-style u-palette-4-light-3 u-btn-2"> Демонстрация устойчивой работы ЯППУ</a>
+<body>
+  <section class="u">
+    <a class="choose">Выберите сценарий</a>
+    <div class="u-align-center">
+      <a href="/Scenario1/index.html" class="button button1">Демонстрация групп оборудования</a>
+      <a class="button button2">Демонстрация устойчивой работы ЯППУ</a>
     </div>
   </section>
   

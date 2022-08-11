@@ -1,14 +1,15 @@
 var video = document.getElementById("myVideo");
 var source = document.getElementById("mySource");
 var btn = document.getElementById("pauseButton");
+var ret = document.getElementById("returnButton")
 
 function pauseFunction() {
     if (video.paused) {
         video.play();
-        btn.src="pause1.png";
+        btn.src="/pause1.png";
     } else {
         video.pause();
-        btn.src="play1.png";
+        btn.src="/play1.png";
     }
 }
 

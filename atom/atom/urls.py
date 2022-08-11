@@ -14,14 +14,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.template.context_processors import static
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', include('atom_app.urls')),
+    path('Scenario1/index.html', include('atom_app.urls')),
     path('Scenario2/index.html', include('atom_app.urls')),
     path('Scenario3/index.html', include('atom_app.urls')),
     path('Scenario4/index.html', include('atom_app.urls')),
-
+    path('Demonstration/1.html', include('atom_app.urls')),
+    path('Demonstration/2.html', include('atom_app.urls')),
+    path('Demonstration/3.html', include('atom_app.urls')),
+    path('Demonstration/4.html', include('atom_app.urls')),
+    path('Demonstration/5.html', include('atom_app.urls')),
+    path('Demonstration/6.html', include('atom_app.urls')),
+    path('Demonstration/7.html', include('atom_app.urls')),
+    path('Demonstration/8.html', include('atom_app.urls')),
+    path('Demonstration/9.html', include('atom_app.urls'))
 ]
-
