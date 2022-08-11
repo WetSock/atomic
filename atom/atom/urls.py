@@ -18,10 +18,6 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('', include('atom_app.urls')),
-    path('Scenario2/index.html', include('atom_app.urls')),
-    path('Scenario3/index.html', include('atom_app.urls')),
-    path('Scenario4/index.html', include('atom_app.urls')),
-
+    path('', include('atom_app.urls'))
 ]
 

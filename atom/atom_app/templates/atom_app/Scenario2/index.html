@@ -16,8 +16,8 @@
         и/или текстовая справка с фотографиями</p>
 
     <div class="content">
-        <a href="file:///G:\Работа\DevOps\Atomic\test\Scenario3\index.html?file=earth.mp4" class="fcc-btn">Демонстрация изменения мощности</a>
-        <a href="file:///G:\Работа\DevOps\Atomic\test\Scenario4\index.html?file=earth.mp4" class="fcc-btn">Демонстрация аварии – обесточивания ЯППУ</a>
+        <a href="{% url 'Scenario3' %}" class="fcc-btn">Демонстрация изменения мощности</a>
+        <a href="{% url 'Scenario4' %}" class="fcc-btn">Демонстрация аварии – обесточивания ЯППУ</a>
         <div class="return">
                 <input id="returnButton" type="image" src="{% static 'images/backButton.png' %}" onclick="history.back()"/>
             </div>

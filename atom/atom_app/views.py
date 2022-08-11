@@ -5,6 +5,9 @@ from django.http import HttpResponse
 from django.views.generic.list import ListView
 
 
+def Demo(request):
+    return render(request, 'atom_app/Demo/index.html')
+
 def Scenario1(request):
     return render(request, 'atom_app/Scenario1/index.html')
 
