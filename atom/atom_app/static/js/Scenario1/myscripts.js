@@ -5,24 +5,11 @@ var btn = document.getElementById("pauseButton");
 function pauseFunction() {
     if (video.paused) {
         video.play();
-        btn.src="pause1.png";
+        btn.src="file:/home/amadeo/Atomic/atomic/atom/atom_app/static/js/Scenario1/pause1.png";
     } else {
         video.pause();
-        btn.src="play1.png";
+        btn.src="file:/home/amadeo/Atomic/atomic/atom/atom_app/static/js/Scenario1/play1.png";
     }
-}
-
-function myFunction1() {
-    source.setAttribute('src', 'Производство корпуса реактора.mp4');
-    video.load();
-    video.play();
-}
-
-
-function myFunction2() {
-    source.setAttribute('src', 'Парогенератор.mp4');
-    video.load();
-    video.play();
 }
 
 function openNav() {

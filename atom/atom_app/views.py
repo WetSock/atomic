@@ -9,6 +9,9 @@ def Demo(request):
     return render(request, 'atom_app/Demo/index.html')
 
 def Scenario1(request):
+    stage = request.GET.get('stage', 0)
+    if stage:
+        return render(request, f'atom_app/Scenario1/Demonstration/{stage}.html')
     return render(request, 'atom_app/Scenario1/index.html')
 
 def Scenario2(request):
