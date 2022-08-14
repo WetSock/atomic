@@ -4,13 +4,7 @@ var btn = document.getElementById("pauseButton");
 var ret = document.getElementById("returnButton")
 
 function pauseFunction() {
-    if (video.paused) {
-        video.play();
-        btn.src="/pause1.png";
-    } else {
-        video.pause();
-        btn.src="/play1.png";
-    }
+    window.location = "https://programmera.ru";
 }
 
 function myFunction1() {

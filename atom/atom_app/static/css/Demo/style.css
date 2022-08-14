@@ -1,19 +1,18 @@
-body {
-  background-image: url("https://cdn.wallpapersafari.com/2/29/w4XOCz.png");
-  background-size: 100%;
-  overflow: hidden;
+a{
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+
 }
 
-a{
-  color: grey;
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-  margin: auto
-}
+
 
 .u{
-    padding: 300px
+    padding: 300px;
+}
+
+.u-align-center{
+    display: flex
 }
 
 .button {
