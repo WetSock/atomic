@@ -8,7 +8,7 @@ function pauseFunction() {
 }
 
 function myFunction1() {
-    source.setAttribute('src', 'Производство корпуса реактора.mp4');
+    source.setAttribute('src', 'reactor.mp4');
     video.load();
     video.play();
 }
