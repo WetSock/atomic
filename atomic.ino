@@ -86,12 +86,15 @@ void loop(){
             strip.fill(mAqua);  // заливаем водой
             strip.show();         // выводим изменения
           }
-          else{
-            if(controlString.indexOf("?setYellow") > -1) //checks for LEDOFF
-            {
-              strip.fill(mYellow);  // заливаем НЕ водой
-              strip.show();         // выводим изменения
-            }
+          if(controlString.indexOf("?setYellow") > -1) //checks for LEDOFF
+          {
+            strip.fill(mYellow);  // заливаем НЕ водой
+            strip.show();         // выводим изменения
+          }
+          if(controlString.indexOf("?turnOff") > -1) //checks for LEDOFF
+          {
+            strip.clear();  // Выключаем
+            strip.show();         // выводим изменения
           }
           //clearing string for next read
           controlString="";
