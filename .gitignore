@@ -1,2 +1,5 @@
-atom/atom/__pycache__/
-atom/atom_app/__pycache__/
+.idea
+venv
+atom/atom_app/static/media/*
+atom/atom/__pycache__
+atom/atom_app/__pycache__
