@@ -314,27 +314,30 @@ body {
 </style>
 </head>
 <body>
-<div class="split left">
-  <div class="centeredd">
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/Demonstration/1.html">Ядерный реактор</a>
-        <a href="/Demonstration/2.html">Парогенераторы</a>
-        <a href="/Demonstration/3.html">Главные циркуляционные насосы</a>
-        <a href="/Demonstration/4.html">Гидроёмкости САОЗ</a>
-        <a href="/Demonstration/5.html">Гидроёмкости СПЗАЗ</a>
-        <a href="/Demonstration/6.html">Компенсатор давления</a>
-        <a href="/Demonstration/7.html">Бак-барботёр</a>
-        <a href="/Demonstration/8.html">Главные циркуляционные трубопроводы</a>
-        <a href="/Demonstration/9.html">Ловушка расплава</a>
-    </div>
+  <div class="split left">
+    <div class="centeredd">
+      <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="/Demonstration/1.html">Ядерный реактор</a>
+          <a href="/Demonstration/2.html">Парогенераторы</a>
+          <a href="/Demonstration/3.html">Главные циркуляционные насосы</a>
+          <a href="/Demonstration/4.html">Гидроёмкости САОЗ</a>
+          <a href="/Demonstration/5.html">Гидроёмкости СПЗАЗ</a>
+          <a href="/Demonstration/6.html">Компенсатор давления</a>
+          <a href="/Demonstration/7.html">Бак-барботёр</a>
+          <a href="/Demonstration/8.html">Главные циркуляционные трубопроводы</a>
+          <a href="/Demonstration/9.html">Ловушка расплава</a>
+      </div>
 
 
     <!-- The video -->
     <div id="main">
+        <div class="logo">
+            <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+        </div>
         <div>
             <video autoplay muted loop id="myVideo">
-                <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">
+                <source id="mySource" src="{%static 'media/parogenerator.mp4' %}" type="video/mp4">
             </video>
         </div>
         <!-- Optional: some overlay teсв ыфxt to describe the video -->
@@ -353,32 +356,28 @@ body {
                 <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';"/>
             </div>
         </div>
-        <div class="logo">
-            <img id="logoButton" src="{% static 'images/logo.png' %}">
-        </div>
     </div>
   </div>
-</div>
 
-<div class="split right">
-  <div class="centered">
-      <p>Парогенератор ПГВ-1000</p>
-      <p>Коллекторы для подвода и отвода теплоносителя – 2 шт.
-      11 000 теплообменных труб-змеевиков
-      Диаметр теплообменных труб - 16 мм
-      длина теплообменных труб - от 11 до 17 м
-      Тепловая мощность - более 1600 т/ч
-      Номинальная тепловая мощность - более 800 МВт</p>
-      <img src="{% static 'images/generator/AX6A6878rd_resize.jpg' %}" alt="Avatar man">
-      <img src="{% static 'images/generator/AX6A9895rd.jpg' %}" alt="Avatar man">
-      <img src="{% static 'images/generator/DSZ_2729.jpg' %}" alt="Avatar man">
+  <div class="split right">
+    <div class="centered">
+        <p>Парогенератор ПГВ-1000</p>
+        <p>Коллекторы для подвода и отвода теплоносителя – 2 шт.
+        11 000 теплообменных труб-змеевиков
+        Диаметр теплообменных труб - 16 мм
+        длина теплообменных труб - от 11 до 17 м
+        Тепловая мощность - более 1600 т/ч
+        Номинальная тепловая мощность - более 800 МВт</p>
+        <img src="{% static 'images/generator/AX6A6878rd_resize.jpg' %}" alt="Avatar man">
+        <img src="{% static 'images/generator/AX6A9895rd.jpg' %}" alt="Avatar man">
+        <img src="{% static 'images/generator/DSZ_2729.jpg' %}" alt="Avatar man">
 
 
-      <h2>HTML CSS</h2>
+        <h2>HTML CSS</h2>
+    </div>
   </div>
-</div>
 
-    <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
 
 
 </body>

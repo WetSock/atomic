@@ -332,6 +332,9 @@ body {
 
     <!-- The video -->
     <div id="main">
+        <div class="logo">
+            <img id="logoButton" src="{% static 'images/logo.png' %}">
+        </div>
         <div>
             <video autoplay muted loop id="myVideo">
                 <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">
@@ -353,26 +356,22 @@ body {
                 <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';"/>
             </div>
         </div>
-        <div class="logo">
-            <img id="logoButton" src="{% static 'images/logo.png' %}">
-        </div>
         </div>
     </div>
   </div>
-</div>
 
-<div class="split right">
-  <div class="centered">
-      <p>Гидроемкость САОЗ</p>
-      <p>Сосуд с борированной водой, является частью пассивной системы аварийного охлаждения активной зоны реакторной установки.</p>
-      <img src="{% static 'images/САОЗ-gydro/DSC05218.jpg' %}" alt="Avatar man">
-      <img src="{% static 'images/САОЗ-gydro/САОЗ 1.JPG' %}" alt="Avatar man">
-      <img src="{% static 'images/САОЗ-gydro/САОЗ 3.JPG' %}" alt="Avatar man">
+  <div class="split right">
+    <div class="centered">
+        <p>Гидроемкость САОЗ</p>
+        <p>Сосуд с борированной водой, является частью пассивной системы аварийного охлаждения активной зоны реакторной установки.</p>
+        <img src="{% static 'images/САОЗ-gydro/DSC05218.jpg' %}" alt="Avatar man">
+        <img src="{% static 'images/САОЗ-gydro/САОЗ 1.JPG' %}" alt="Avatar man">
+        <img src="{% static 'images/САОЗ-gydro/САОЗ 3.JPG' %}" alt="Avatar man">
 
 
-      <h2>HTML CSS</h2>
+        <h2>HTML CSS</h2>
+    </div>
   </div>
-</div>
 
     <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
 
