@@ -123,6 +123,15 @@ body {
 
   }
 
+  #logoButton {
+    position: absolute;
+    width: 110px;
+    top: 3%;
+    left: 1%;
+
+
+  }
+
   /* Style the button used to pause/play the video */
   #homeButton {
     margin: 0;
@@ -241,11 +250,6 @@ body {
     animation-duration: 1.5s;
   }
 
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-
 
 
 
@@ -333,7 +337,7 @@ body {
                 <source id="mySource" src="{%static 'videos/Производство корпуса реактора.mp4' %}" type="video/mp4">
             </video>
         </div>
-        <!-- Optional: some overlay text to describe the video -->
+        <!-- Optional: some overlay teсв ыфxt to describe the video -->
         <div class="content">
             <div class="menu">
                 <input id="menuButton" type="image" src="{% static 'images/menuu.png' %}" onclick="openNav()">
@@ -348,6 +352,10 @@ body {
             <div class="return">
                 <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';"/>
             </div>
+        </div>
+        </div>
+        <div class="logo">
+            <input id="logoButton" type="image" src="{% static 'images/logo.png' %}" onclick="">
         </div>
     </div>
   </div>
