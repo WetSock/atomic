@@ -8,8 +8,8 @@ import requests
 
 
 def Demo(request):
-    x = requests.get('http://192.168.2.202/?turnOff')
-    print(x.status_code)
+    # x = requests.get('http://192.168.2.202/?turnOff')
+    # print(x.status_code)
     return render(request, 'atom_app/Demo/index.html')
 
 def Scenario1(request):
@@ -25,13 +25,13 @@ def Scenario4(request):
     return render(request, 'atom_app/Scenario4/index.html')
 
 def Demo1(request):
-    x = requests.get('http://192.168.2.202/?setYellow')
-    print(x.status_code)
+    # x = requests.get('http://192.168.2.202/?setYellow')
+    # print(x.status_code)
     return render(request, 'atom_app/Scenario1/Demonstration/1.html')
 
 def Demo2(request):
-    x = requests.get('http://192.168.2.202/?setAqua')
-    print(x.status_code)
+    # x = requests.get('http://192.168.2.202/?setAqua')
+    # print(x.status_code)
     return render(request, 'atom_app/Scenario1/Demonstration/2.html')
 
 def Demo3(request):

@@ -68,9 +68,9 @@ body {
   }
   #myVideo {
     position: fixed;
-    z-index: -100;
-    width: 70%;
-    height: 100%;
+    margin: 0;
+    width: 20%;
+    height: 20%;
     top: 0%;
     left: 0%;
     transform: none;
@@ -311,6 +311,27 @@ body {
 
 .container {
    width: 500px }
+
+.wrapper {
+        width: 70%;
+        height: 85%;
+        bottom: 15%;
+        left: 0%;
+        position: fixed;
+
+      }
+      .exmpl {
+              left: 0%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .exmpl img {
+
+        height: 100%;
+        width: 100%;
+      }
 </style>
 </head>
 <body>
@@ -332,13 +353,16 @@ body {
 
     <!-- The video -->
     <div id="main">
-        <div class="logo">
-            <img id="logoButton" src="{% static 'images/logo.png' %}">
+<!--        <div>-->
+        <!--            <video autoplay muted loop id="myVideo">-->
+        <!--                <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">-->
+        <!--            </video>-->
+        <!--        </div>-->
+        <div class="wrapper exmpl">
+            <img src="{% static 'images/mcpumps/ГЦН-1.png' %}">
         </div>
-        <div>
-            <video autoplay muted loop id="myVideo">
-                <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">
-            </video>
+        <div class="logo">
+            <img id="logoButton" src="{% static 'images/logo_color.png' %}">
         </div>
         <!-- Optional: some overlay teсв ыфxt to describe the video -->
         <div class="content">
