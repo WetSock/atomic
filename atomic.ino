@@ -10,12 +10,16 @@ EthernetServer server(80);
 String controlString;
 
 
-
-#define STRIP_PIN 7     // пин ленты
 #define NUMLEDS 16      // кол-во светодиодов
 #define COLOR_DEBTH 3
 #include <microLED.h>   // Для ленты
-microLED<NUMLEDS, STRIP_PIN, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip;
+microLED<NUMLEDS, 3, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip;
+microLED<NUMLEDS, 4, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip4;
+microLED<NUMLEDS, 5, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip5;
+microLED<NUMLEDS, 6, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip6;
+microLED<NUMLEDS, 7, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip7;
+
+strips = [strip, strip4, strip5, strip6, strip7];
 
 void setup() {
   strip.setBrightness(90);
@@ -72,30 +76,13 @@ void loop(){
         
         //if HTTP request has ended– 0x0D is Carriage Return \n ASCII
         if (c == 0x0D) {
-          client.println("HTTP/1.1 200 OK"); //send new page
-          client.println("{ result: \"OK\" }");
-          client.println();
+          client.println("{ result: \"" + controlString + "\" }");
           
           delay(10);
           //stopping client
           client.stop();
           
-          // control arduino pin
-          if(controlString.indexOf("?setAqua") > -1) //checks for LEDON
-          {
-            strip.fill(mAqua);  // заливаем водой
-            strip.show();         // выводим изменения
-          }
-          if(controlString.indexOf("?setYellow") > -1) //checks for LEDOFF
-          {
-            strip.fill(mYellow);  // заливаем НЕ водой
-            strip.show();         // выводим изменения
-          }
-          if(controlString.indexOf("?turnOff") > -1) //checks for LEDOFF
-          {
-            strip.clear();  // Выключаем
-            strip.show();         // выводим изменения
-          }
+          runCommand(controlString)
           //clearing string for next read
           controlString="";
         
@@ -103,4 +90,26 @@ void loop(){
       }
     }
   }
+}
+
+void runCommand(command){
+  if(command.indexOf("?setAqua") > -1)
+  {
+    strip.fill(mAqua);  // заливаем водой
+    strip.show();         // выводим изменения
+  }
+  if(command.indexOf("?setYellow") > -1)
+  {
+    strip.fill(mYellow);  // заливаем НЕ водой
+    strip.show();         // выводим изменения
+  }
+  if(command.indexOf("?turnOff") > -1) 
+  {
+    strip.clear();  // Выключаем
+    strip.show();         // выводим изменения
+  }
+}
+
+void splitParams(params){
+  
 }
