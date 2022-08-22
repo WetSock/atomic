@@ -26,7 +26,7 @@ urlpatterns = [
     path('Scenario1/index.html', include('atom_app.urls')),
     path('Scenario2/1.html', include('atom_app.urls')),
     path('Scenario3/index.html', include('atom_app.urls')),
-    path('Scenario4/index.html', include('atom_app.urls')),
+    path('Scenario2/Scenario4/1.html', include('atom_app.urls')),
     path('Demonstration/1.html', include('atom_app.urls')),
     path('Demonstration/2.html', include('atom_app.urls')),
     path('Demonstration/3.html', include('atom_app.urls')),

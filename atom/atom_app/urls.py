@@ -6,7 +6,7 @@ urlpatterns = [
     path('Scenario1/index.html', views.Scenario1),
     path('Scenario2/1.html', views.Scenario2),
     path('Scenario3/index.html', views.Scenario3),
-    path('Scenario4/index.html', views.Scenario4),
+    path('Scenario2/Scenario4/1.html', views.Scenario4),
     path('Demonstration/1.html', views.Demo1),
     path('Demonstration/2.html', views.Demo2),
     path('Demonstration/3.html', views.Demo3),
