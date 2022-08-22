@@ -16,8 +16,10 @@
 
     <div class="content">
         <div>
-            <input type="range" value="0">
-            <div id="h4-container"><div id="h4-subcontainer"><h4>0<span></span></h4></div></div>
-
+            Уровень мощности
+            <input id="input-range" type="range" min="0" max="100" value="35">
+        <div class="return">
+                <input id="returnButton" type="image" src="{% static 'images/backButton.png' %}" onclick="history.back()"/>
+            </div>
 </body>
 </html>
