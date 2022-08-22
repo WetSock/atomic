@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 <html>
 <head>
-    <link rel="stylesheet" href="{% static 'css/Scenario2/style.css' %}">
-</head>
-<body style="background-color:black;">
-    <!-- The video -->
-    <div>
-        <video autoplay muted id="myVideo">
-            <source id="mySource" src="{5 static 'images/Парогенератор.mp4' %}" type="video/mp4">
-        </video>
-    </div>
-    <!-- Optional: some overlay text to describe the video -->
-    <p style="color:white;font-size:40px;">Тут должна быть информационная справка: видеоролик
-        и/или текстовая справка с фотографиями</p>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <link rel="stylesheet" href="{% static 'css/Demo/style.css' %}">
 
-    <div class="content">
-        <a href="file:///G:\Работа\DevOps\Atomic\test\Scenario3\index.html?file=earth.mp4" class="fcc-btn">Демонстрация изменения мощности</a>
-        <a href="file:///G:\Работа\DevOps\Atomic\test\Scenario4\index.html?file=earth.mp4" class="fcc-btn">Демонстрация аварии – обесточивания ЯППУ</a>
-        <div class="return">
-                <input id="returnButton" type="image" src="{% static 'images/backButton.png' %}" onclick="history.back()"/>
-            </div>
-    </div>
+</head>
+<body style="position: fixed;">
+
+  <div class="main-back" style="background: url('{%static 'images/background2.png' %}') no-repeat; background-size: 100% 100%;">
+    <div class="u">
+      <div style="text-align: center; top: 50px">
+        <a>Выберите сценарий</a>
+      </div>
+      <div class="u-align-center">
+        <a href="Demonstration/1.html" class="button button1">Оборудование ядерной паропроизводящей установки (ЯППУ)</a>
+        <a href="Scenario2/1.html" class="button button2">Демонстрация устойчивой работы ЯППУ</a>
+      </div>
+  </div>
+
 </body>
 </html>
