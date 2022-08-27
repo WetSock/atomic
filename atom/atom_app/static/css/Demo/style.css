@@ -18,21 +18,31 @@ a{
 }
 
 
-.u{
+.content{
     padding: 300px;
+    padding-top: 35%;
+    padding-bottom: 20%;
 }
 
-.u-align-center{
+.content-header{
+    width: 100%;
+    text-align: center; 
+    bottom: 500px;
+    display: block;
+}
+
+.content-align-center{
     width: 100%;
 }
 
-.u-align-center a{
+.content-align-center a{
     display: block
 }
 
 .button {
     background-color: #003274;
-    border: none;
+    border: black;
+    border-radius: 20px;
     color: white;
     padding: 15px 15px;
     text-align: center;
