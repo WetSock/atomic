@@ -23,29 +23,33 @@ a{
 }
 
 .u-align-center{
-    display: flex
+    width: 100%;
+}
+
+.u-align-center a{
+    display: block
 }
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #003274;
     border: none;
     color: white;
     padding: 15px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 30px;
     margin: 4px 2px;
     cursor: pointer;
 }
-.button1 {
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
-}
 
-.button2 {
-    background-color: white;
-    color: black;
-    border: 2px solid #008CBA;
-}
+
+#logoButton {
+    position: absolute;
+    width: 20%;
+    top: 3%;
+    left: 1%;
+  
+  
+  }
+  
