@@ -3,24 +3,26 @@
 <html>
 <head>
     <link rel="stylesheet" href="{% static 'css/Scenario2/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
 </head>
 <body style="background-color:black;">
-    <!-- The video -->
-    <div>
-        <video autoplay muted id="myVideo">
-            <source id="mySource" src="{5 static 'images/Парогенератор.mp4' %}" type="video/mp4">
-        </video>
-    </div>
-    <!-- Optional: some overlay text to describe the video -->
-    <p style="color:white;font-size:40px;">Тут должна быть информационная справка: видеоролик
-        и/или текстовая справка с фотографиями</p>
+    <div class="main-back" style="background: url('{%static 'images/pattern.png' %}') no-repeat; background-size: 100% 100%;">
+        <div class="logo">
+          <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+        </div>
 
-    <div class="content">
-        <a href="file:///G:\Работа\DevOps\Atomic\test\Scenario3\index.html?file=earth.mp4" class="fcc-btn">Демонстрация изменения мощности</a>
-        <a href="file:///G:\Работа\DevOps\Atomic\test\Scenario4\index.html?file=earth.mp4" class="fcc-btn">Демонстрация аварии – обесточивания ЯППУ</a>
-        <div class="return">
+
+        <div class="content">
+
+            <div class="content-align-center">
+              <a href="../Scenario3/index.html" class="button">Демонстрация изменения мощности</a>
+      
+              <a href="../Scenario4/index.html" class="button">Демонстрация аварии – обесточивания ЯППУ</a>
+            </div>
+            <div class="return">
                 <input id="returnButton" type="image" src="{% static 'images/backButton.png' %}" onclick="history.back()"/>
             </div>
+        </div>
     </div>
 </body>
 </html>
