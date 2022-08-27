@@ -1,70 +1,65 @@
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-    position: fixed;
-    z-index: -100;
-    width: 100%; 
-    height: 100%; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
-  /* Add some content at the bottom of the video/page */
-  .content {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    width: 85%;
-    padding: 100px;
-  }  
-  /* Style the button used to pause/play the video */
-  #powerButton {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 70px;
-    font-size: 18px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-  }
-  #electricityButton {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 70px;
-    font-size: 18px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-  }
-  #returnButton {
-    margin: 0;
-    position: absolute;
-    top: 70%;
-    left: 90%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 70px;
-    font-size: 18px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-  }
+a{
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
 
-  .fcc-btn {
-    background-color: #199319;
+}
+
+.main-back {
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.content{
+    padding: 300px;
+    padding-top: 35%;
+    padding-bottom: 20%;
+}
+
+.content-header{
+    width: 100%;
+    text-align: center; 
+    bottom: 500px;
+    display: block;
+}
+
+.content-align-center{
+    width: 100%;
+}
+
+.content-align-center a{
+    display: block
+}
+
+.button {
+    background-color: #003274;
+    border: black;
+    border-radius: 20px;
     color: white;
-    padding: 15px 25px;
+    padding: 15px 15px;
+    text-align: center;
     text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+#logoButton {
+    position: absolute;
+    width: 20%;
+    top: 3%;
+    left: 1%;
+  
+  
   }
   
-  .fcc-btn:hover {
-    background-color: #223094;
-  }
