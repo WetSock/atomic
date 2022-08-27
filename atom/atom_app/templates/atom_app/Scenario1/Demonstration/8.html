@@ -6,70 +6,71 @@
 <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
 </head>
 <body>
-<div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
-background-size: 100% 100%; 
-background-color: rgba(0, 50, 116, 0.8);
-background-blend-mode: darken;">
-  <div class="centered">
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/Demonstration/1.html">Ядерный реактор</a>
-        <a href="/Demonstration/2.html">Парогенераторы</a>
-        <a href="/Demonstration/3.html">Главные циркуляционные насосы</a>
-        <a href="/Demonstration/4.html">Гидроёмкости САОЗ</a>
-        <a href="/Demonstration/5.html">Гидроёмкости СПЗАЗ</a>
-        <a href="/Demonstration/6.html">Компенсатор давления</a>
-        <a href="/Demonstration/7.html">Бак-барботёр</a>
-        <a href="/Demonstration/8.html">Главные циркуляционные трубопроводы</a>
-        <a href="/Demonstration/9.html">Ловушка расплава</a>
-    </div>
+    <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
+        background-size: 100% 100%; 
+        background-color: rgba(0, 50, 116, 0.8);
+        background-blend-mode: darken;">
+        <div class="centered">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="/Demonstration/1.html">Ядерный реактор</a>
+                <a href="/Demonstration/2.html">Парогенераторы</a>
+                <a href="/Demonstration/3.html">Главные циркуляционные насосы</a>
+                <a href="/Demonstration/4.html">Гидроёмкости САОЗ</a>
+                <a href="/Demonstration/5.html">Гидроёмкости СПЗАЗ</a>
+                <a href="/Demonstration/6.html">Компенсатор давления</a>
+                <a href="/Demonstration/7.html">Бак-барботёр</a>
+                <a href="/Demonstration/8.html">Главные циркуляционные трубопроводы</a>
+                <a href="/Demonstration/9.html">Ловушка расплава</a>
+            </div>
 
 
 
-    <div id="main">
-        <div class="logo">
-            <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+            <div id="main">
+                <div class="logo">
+                    <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+                </div>
+                <div class="main-text">
+                    <p><h1>Главные циркуляционные трубопроводы</h1></p>
+                    <p>Главные циркуляционные трубопроводы (ГЦТ) предназначены для соединения основного оборудования первого контура АЭС: 
+                        реактора, парогенераторов и главных циркуляционных насосов. По ним циркулирует теплоноситель - вода. 
+                        Для защиты трубопровода от агрессивного воздействия теплоносителя на внутреннюю поверхность кованых заготовок 
+                        наносят антикоррозионное покрытие. Трубопроводы относятся к первой категории сейсмостойкости и 
+                        способны выдержать землетрясение в девять баллов. Общая протяженность трубопровода — более 160 метров.</p>
+                </div>
+            </div>
         </div>
-        <p><h1>Главные циркуляционные трубопроводы</h1></p>
-        <p>Главные циркуляционные трубопроводы (ГЦТ) предназначены для соединения основного оборудования первого контура АЭС: 
-            реактора, парогенераторов и главных циркуляционных насосов. По ним циркулирует теплоноситель - вода. 
-            Для защиты трубопровода от агрессивного воздействия теплоносителя на внутреннюю поверхность кованых заготовок 
-            наносят антикоррозионное покрытие. Трубопроводы относятся к первой категории сейсмостойкости и 
-            способны выдержать землетрясение в девять баллов. Общая протяженность трубопровода — более 160 метров.</p>
+    </div>
 
-
+    <div class="split right" style="background: url('{%static 'images/pattern.png' %}') no-repeat; 
+        background-size: 100% 100%;
+        background-color: rgba(108, 172, 228, 0.7);
+        background-blend-mode: lighten;">
+        <div class="split up">
+            <div class="centered">
+                <img src="{% static 'images/mcpipes/Трубный узел-1.png' %}">      
+                <img src="{% static 'images/mcpipes/DSC_2220.JPG' %}" alt="Avatar man">
+                <img src="{% static 'images/mcpipes/ГЦТ 1.jpg' %}" alt="Avatar man">
+                <img src="{% static 'images/mcpipes/ГЦТ_без_фона.png' %}" alt="Avatar man">
+            </div>
+        </div>
+        <div class="split down">
+            <div class="content">
+            <div class="menu">
+                <input id="menuButton" type="image" src="{% static 'images/menuu.png' %}" onclick="openNav()">
+            </div>
+            <div class="previous">
+                <input id="previousButton" type="image" src="{% static 'images/previous.png' %}" onclick="location.href='/Demonstration/7.html';"/>
+            </div>
+            <div class="pause">
+                <input id="nextButton" type="image" src="{% static 'images/next.png' %}" onclick="location.href='/Demonstration/9.html';"/>
+            </div>
+            <div class="return">
+                <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';"/>
+            </div>
+            </div>
         </div>
     </div>
-
-
-</div>
-
-<div class="split right">
-    <div class="split up">
-  <div class="centered">
-      <img src="{% static 'images/mcpipes/Трубный узел-1.png' %}">      
-      <img src="{% static 'images/mcpipes/DSC_2220.JPG' %}" alt="Avatar man">
-      <img src="{% static 'images/mcpipes/ГЦТ 1.jpg' %}" alt="Avatar man">
-      <img src="{% static 'images/mcpipes/ГЦТ_без_фона.png' %}" alt="Avatar man">
-  </div>
-</div>
-<div class="split down">
-    <div class="content">
-      <div class="menu">
-          <input id="menuButton" type="image" src="{% static 'images/menuu.png' %}" onclick="openNav()">
-      </div>
-      <div class="previous">
-          <input id="previousButton" type="image" src="{% static 'images/previous.png' %}" onclick="location.href='/Demonstration/7.html';"/>
-      </div>
-      <div class="pause">
-          <input id="nextButton" type="image" src="{% static 'images/next.png' %}" onclick="location.href='/Demonstration/9.html';"/>
-      </div>
-      <div class="return">
-          <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';"/>
-      </div>
-    </div>
-</div>
-</div>
 
     <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
 

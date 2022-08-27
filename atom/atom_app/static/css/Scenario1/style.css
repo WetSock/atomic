@@ -24,14 +24,12 @@ body {
   width: 30%;
   right: 0;
   top: 0%;
-  background-color: white;
 }
 
 .up {
   position: fixed;
   height: 90%;
   top: 0%;
-  background-color: #6cace4;
   overflow-y: scroll;
 }
 
@@ -39,7 +37,6 @@ body {
   position: fixed;
   height: 10%;
   bottom: 0;
-  background-color: #6cace4;
 }
 
 .centered {
@@ -51,17 +48,6 @@ body {
   width: 90%;
 }
 
-.slideshow-container {
-  bottom: 5%;
-  left: 10%;
-  max-width: 300px;
-  position: absolute;
-  margin: 0;
-  background: rgba(34, 199, 103, 0.5);
-  color: #f1f1f1;
-
-  border: 1;
-}
 #myVideo {
   width: 90%;
   height: 100%;
@@ -73,19 +59,17 @@ body {
   position: absolute;
   bottom: 0%;
   left: 0%;
-  color: #f1f1f1;
   width: 100%;
   padding: 100px;
 }
-  /* Add some content at the bottom of the video/page */
-  .header {
-      position: relative;
-      background: rgba(0, 0, 0, 0.5);
-      color: #f1f1f1;
-      width: 100%;
-      padding: 20px;
-      }
 
+.main-text {
+  top: 20%;
+  left: 0%;
+  color: #f1f1f1;
+  width: 100%;
+  padding: 5%;
+}
 
 #logoButton {
   position: absolute;
@@ -93,7 +77,7 @@ body {
   top: 3%;
   left: 1%;
 }
-  /* Style the button used to pause/play the video */
+
 #nextButton {
   margin: 0;
   position: absolute;
@@ -123,7 +107,6 @@ body {
 
 }
 
-/* Style the button used to pause/play the video */
 #homeButton {
   margin: 0;
   position: absolute;
@@ -153,12 +136,6 @@ body {
 }
 
 * {box-sizing:border-box}
-
-
-
-
-
-
 
 
 

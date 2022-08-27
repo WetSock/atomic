@@ -6,68 +6,68 @@
 <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
 </head>
 <body>
-  <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
-  background-size: 100% 100%; 
-  background-color: rgba(0, 50, 116, 0.8);
-  background-blend-mode: darken;">
-    <div class="centered">
-      <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="/Demonstration/1.html">Ядерный реактор</a>
-          <a href="/Demonstration/2.html">Парогенераторы</a>
-          <a href="/Demonstration/3.html">Главные циркуляционные насосы</a>
-          <a href="/Demonstration/4.html">Гидроёмкости САОЗ</a>
-          <a href="/Demonstration/5.html">Гидроёмкости СПЗАЗ</a>
-          <a href="/Demonstration/6.html">Компенсатор давления</a>
-          <a href="/Demonstration/7.html">Бак-барботёр</a>
-          <a href="/Demonstration/8.html">Главные циркуляционные трубопроводы</a>
-          <a href="/Demonstration/9.html">Ловушка расплава</a>
-      </div>
+    <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
+        background-size: 100% 100%; 
+        background-color: rgba(0, 50, 116, 0.8);
+        background-blend-mode: darken;">
+        <div class="centered">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="/Demonstration/1.html">Ядерный реактор</a>
+                <a href="/Demonstration/2.html">Парогенераторы</a>
+                <a href="/Demonstration/3.html">Главные циркуляционные насосы</a>
+                <a href="/Demonstration/4.html">Гидроёмкости САОЗ</a>
+                <a href="/Demonstration/5.html">Гидроёмкости СПЗАЗ</a>
+                <a href="/Demonstration/6.html">Компенсатор давления</a>
+                <a href="/Demonstration/7.html">Бак-барботёр</a>
+                <a href="/Demonstration/8.html">Главные циркуляционные трубопроводы</a>
+                <a href="/Demonstration/9.html">Ловушка расплава</a>
+            </div>
 
-    <div id="main">
-        <div class="logo">
-            <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+            <div id="main">
+                <div class="logo">
+                    <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+                </div>
+                <div class="main-text">        
+                    <p><h1>Парогенератор</h1></p>
+                    <p>Парогенератор — теплообменный аппарат, который является частью реакторной установки и относится к изделиям первого класса безопасности. Корпус парогенератора представляет собой горизонтальный цилиндрический сосуд с двумя эллиптическими днищами. В средней части расположены коллекторы для подвода и отвода теплоносителя. В верхней части корпуса находится паровое пространство, а в нижней располагается поверхность теплообмена, которая состоит из 11 000 нержавеющих труб. Если сложить в длину все трубки одного парогенератора, их общая длина составит 148,5 км. Диаметр труб составляет 16 мм, длина — от 11 до 17 метров. Концы труб закреплены в двух коллекторах.</p>
+                    <p>Парогенератор предназначен для передачи энергии, произведённой в активной зоне реактора, во второй контур – к генерирующей электричество турбине. По 4 циркуляционным петлям нагретая в реакторе вода поступает в парогенераторы, где передаёт своё тепло теплоносителю второго контура. Кипящая вода второго контура преобразуется в пар и через сборные паропроводы поступает к турбине. Из парогенераторов вода первого контура главными циркуляционными насосами возвращается в реактор.</p>
+                </div>
+            </div>
         </div>
-        <div>        
-          <p><h1>Парогенератор</h1></p>
-          <p>Парогенератор — теплообменный аппарат, который является частью реакторной установки и относится к изделиям первого класса безопасности. Корпус парогенератора представляет собой горизонтальный цилиндрический сосуд с двумя эллиптическими днищами. В средней части расположены коллекторы для подвода и отвода теплоносителя. В верхней части корпуса находится паровое пространство, а в нижней располагается поверхность теплообмена, которая состоит из 11 000 нержавеющих труб. Если сложить в длину все трубки одного парогенератора, их общая длина составит 148,5 км. Диаметр труб составляет 16 мм, длина — от 11 до 17 метров. Концы труб закреплены в двух коллекторах.</p>
-          <p>Парогенератор предназначен для передачи энергии, произведённой в активной зоне реактора, во второй контур – к генерирующей электричество турбине. По 4 циркуляционным петлям нагретая в реакторе вода поступает в парогенераторы, где передаёт своё тепло теплоносителю второго контура. Кипящая вода второго контура преобразуется в пар и через сборные паропроводы поступает к турбине. Из парогенераторов вода первого контура главными циркуляционными насосами возвращается в реактор.</p>
-        </div>
-        <!-- Optional: some overlay teсв ыфxt to describe the video -->
-
     </div>
-  </div>
 
-  <div class="split right">
-    <div class="split up">
-      <div class="centered">
-      <video autoplay muted loop id="myVideo">
-          <source id="mySource" src="{%static 'media/parogenerator.mp4' %}" type="video/mp4">
-      </video>
-
-        <img src="{% static 'images/generator/AX6A6878rd_resize.jpg' %}" alt="Avatar man">
-        <img src="{% static 'images/generator/AX6A9895rd.jpg' %}" alt="Avatar man">
-        <img src="{% static 'images/generator/DSZ_2729.jpg' %}" alt="Avatar man">
-
-      </div>
+    <div class="split right" style="background: url('{%static 'images/pattern.png' %}') no-repeat; 
+        background-size: 100% 100%;
+        background-color: rgba(108, 172, 228, 0.7);
+        background-blend-mode: lighten;">
+        <div class="split up">
+            <div class="centered">
+                <video autoplay muted loop id="myVideo">
+                    <source id="mySource" src="{%static 'media/parogenerator.mp4' %}" type="video/mp4">
+                </video>
+                <img src="{% static 'images/generator/AX6A6878rd_resize.jpg' %}" alt="Avatar man">
+                <img src="{% static 'images/generator/AX6A9895rd.jpg' %}" alt="Avatar man">
+                <img src="{% static 'images/generator/DSZ_2729.jpg' %}" alt="Avatar man">
+            </div>
+        </div>
+        <div class="split down">
+            <div class="content">
+                <div class="menu">
+                    <input id="menuButton" type="image" src="{% static 'images/menuu.png' %}" onclick="openNav()">
+                </div>
+                <div class="previous">
+                    <input id="previousButton" type="image" src="{% static 'images/previous.png' %}" onclick="location.href='/Demonstration/1.html';"/>
+                </div>
+                <div class="pause">
+                    <input id="nextButton" type="image" src="{% static 'images/next.png' %}" onclick="location.href='/Demonstration/3.html';"/>
+                </div>
+                <div class="return">
+                    <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';"/>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="split down">
-      <div class="content">
-        <div class="menu">
-            <input id="menuButton" type="image" src="{% static 'images/menuu.png' %}" onclick="openNav()">
-        </div>
-        <div class="previous">
-            <input id="previousButton" type="image" src="{% static 'images/previous.png' %}" onclick="location.href='/Demonstration/1.html';"/>
-        </div>
-        <div class="pause">
-            <input id="nextButton" type="image" src="{% static 'images/next.png' %}" onclick="location.href='/Demonstration/3.html';"/>
-        </div>
-        <div class="return">
-            <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';"/>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
 
