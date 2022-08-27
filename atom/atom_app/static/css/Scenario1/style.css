@@ -1,5 +1,7 @@
 body {
   color: white;
+  font-family: Rosatom;
+  font-size: 30px;
   display: grid;
   grid-template-columns: 300px 1fr 250px;
 }
