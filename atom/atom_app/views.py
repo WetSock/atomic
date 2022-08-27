@@ -16,7 +16,7 @@ def Scenario1(request):
     return render(request, 'atom_app/Scenario1/index.html')
 
 def Scenario2(request):
-    return render(request, 'atom_app/Scenario2/index.html')
+    return render(request, 'atom_app/Scenario2/1.html')
 
 def Scenario3(request):
     return render(request, 'atom_app/Scenario3/index.html')

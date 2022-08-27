@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('atom_app.urls')),
     path('Scenario1/index.html', include('atom_app.urls')),
-    path('Scenario2/index.html', include('atom_app.urls')),
+    path('Scenario2/1.html', include('atom_app.urls')),
     path('Scenario3/index.html', include('atom_app.urls')),
     path('Scenario4/index.html', include('atom_app.urls')),
     path('Demonstration/1.html', include('atom_app.urls')),

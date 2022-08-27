@@ -10,7 +10,7 @@ p{
 
 
 body {
-    font-family: Roboto;
+    font-family: Arial;
     color: white;
     display: grid;
     grid-template-columns: 300px 1fr 250px;
@@ -30,7 +30,7 @@ body {
 .left {
     width: 100%;
     left: 0%;
-    background-color: #7F7F7F;
+    background-color: #111;
 }
 
 .right {
@@ -120,6 +120,15 @@ body {
     border: none;
     color: #fff;
     cursor: pointer;
+
+  }
+
+  #logoButton {
+    position: absolute;
+    width: 110px;
+    top: 3%;
+    left: 1%;
+
 
   }
 
@@ -241,23 +250,6 @@ body {
     animation-duration: 1.5s;
   }
 
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-
-
-
-
-#logoButton {
-    position: absolute;
-    width: 110px;
-    top: 3%;
-    left: 1%;
-
-
-  }
-
 
 
 
@@ -283,7 +275,7 @@ body {
 
 /* The navigation menu links */
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 60% 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
@@ -319,27 +311,6 @@ body {
 
 .container {
    width: 500px }
-
-.wrapper {
-        width: 70%;
-        height: 85%;
-        bottom: 15%;
-        left: 0%;
-        position: fixed;
-
-      }
-      .exmpl {
-              left: 0%;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .exmpl img {
-
-        height: 100%;
-        width: 100%;
-      }
 </style>
 </head>
 <body>
@@ -347,42 +318,32 @@ body {
   <div class="centeredd">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/Demonstration/1.html">Ядерный реактор</a>
-        <a href="/Demonstration/2.html">Парогенераторы</a>
-        <a href="/Demonstration/3.html">Главные циркуляционные насосы</a>
-        <a href="/Demonstration/4.html">Гидроёмкости САОЗ</a>
-        <a href="/Demonstration/5.html">Гидроёмкости СПЗАЗ</a>
-        <a href="/Demonstration/6.html">Компенсатор давления</a>
-        <a href="/Demonstration/7.html">Бак-барботёр</a>
-        <a href="/Demonstration/8.html">Главные циркуляционные трубопроводы</a>
-        <a href="/Demonstration/9.html">Ловушка расплава</a>
+        <a href="/Scenario3/index.html">Демонстрация изменения мощности</a>
+        <a href="/Scenario4/index.html">Демонстрация аварии – обесточивания ЯППУ</a>
     </div>
 
 
     <!-- The video -->
     <div id="main">
-<!--        <div>-->
-        <!--            <video autoplay muted loop id="myVideo">-->
-        <!--                <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">-->
-        <!--            </video>-->
-        <!--        </div>-->
-        <div class="wrapper exmpl">
-            <img src="{% static 'images/mcpipes/Трубный узел-1.png' %}">
-        </div>
         <div class="logo">
-            <img id="logoButton" src="{% static 'images/logo_color.png' %}">
+            <img id="logoButton" src="{% static 'images/logo_white.png' %}">
         </div>
-        <!-- Optional: some overlay to describe the video -->
+        <div>
+            <video autoplay muted loop id="myVideo">
+                <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+        <!-- Optional: some overlay teсв ыфxt to describe the video -->
         <div class="content">
             <div class="menu">
                 <input id="menuButton" type="image" src="{% static 'images/menuu.png' %}" onclick="openNav()">
             </div>
-<!--             Use a button to pause/play the video with JavaScript -->
-            <div class="previous">
-                <input id="previousButton" type="image" src="{% static 'images/previous.png' %}" onclick="location.href='/Demonstration/7.html';"/>
-            </div>
+            <!-- Use a button to pause/play the video with JavaScript -->
+<!--            <div class="previous">-->
+<!--                <input id="previousButton" type="image" src="{% static 'images/previous.png' %}" onclick="pauseFunction()"/>-->
+<!--            </div>-->
             <div class="pause">
-                <input id="nextButton" type="image" src="{% static 'images/next.png' %}" onclick="location.href='/Demonstration/9.html';"/>
+                <input id="nextButton" type="image" src="{% static 'images/next.png' %}" onclick="location.href='/Demonstration/2.html';"/>
             </div>
             <div class="return">
                 <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';"/>
@@ -391,15 +352,14 @@ body {
         </div>
     </div>
   </div>
-</div>
 
 <div class="split right">
   <div class="centered">
-<!--      <p>Атомный реактор типа ВВЭР.</p>-->
-<!--      <p>Водо-водяной энергетический реактор на тепловых нейтронах. Управляемая цепная реакция.</p>-->
-      <img src="{% static 'images/mcpipes/DSC_2220.JPG' %}" alt="Avatar man">
-      <img src="{% static 'images/mcpipes/ГЦТ 1.jpg' %}" alt="Avatar man">
-      <img src="{% static 'images/mcpipes/ГЦТ_без_фона.png' %}" alt="Avatar man">
+      <p>Атомный реактор типа ВВЭР.</p>
+      <p>Водо-водяной энергетический реактор на тепловых нейтронах. Управляемая цепная реакция.</p>
+      <img src="{% static 'images/reactor/AX6A8656_resize.JPG' %}" alt="Avatar man">
+      <img src="{% static 'images/reactor/AX6A9694.JPG' %}" alt="Avatar man">
+      <img src="{% static 'images/reactor/info.png' %}" alt="Avatar man">
 
 
       <h2>HTML CSS</h2>
