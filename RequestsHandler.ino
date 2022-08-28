@@ -1,11 +1,11 @@
 void runCommand(String command){
   if (command.indexOf("?turnOff") > -1) 
   {
-    strip1.clear();  // Выключаем
-    strip2.clear();  // Выключаем
+    reactorSPI.clear();  // Выключаем
+    parogeneratorSPI.clear();  // Выключаем
     strip3.clear();  // Выключаем
-    strip1.show();   // выводим изменения
-    strip2.show();   // выводим изменения
+    reactorSPI.show();   // выводим изменения
+    parogeneratorSPI.show();   // выводим изменения
     strip3.show();   // выводим изменения
 
     int sizeOfArray = sizeof(allDiods) / sizeof(int);
@@ -14,23 +14,20 @@ void runCommand(String command){
       digitalWrite(allDiods[index], LOW); 
     }  
   };
-  if (command.indexOf("?setAqua") > -1)
-  {
-    strip1.fill(mAqua);  // заливаем водой
-    strip1.show();         // выводим изменения
-  };
-  if (command.indexOf("?setYellow") > -1)
-  {
-    strip1.fill(mYellow);  // заливаем НЕ водой
-    strip1.show();         // выводим изменения
-  };
   if (command.indexOf("?turnOnMainLight") > -1)
   {
       digitalWrite(mainPin, HIGH); 
   };  
+  if (command.indexOf("?turnOnReactor") > -1)
+  {
+    reactorSPI.fill(mWhite);  // заливаем водой
+    reactorSPI.show();         // выводим изменения
+  };  
   if (command.indexOf("?turnOnParogenerator") > -1)
   {
-      digitalWrite(parogeneratorPin, HIGH); 
+    parogeneratorSPI.fill(mWhite);  // заливаем водой
+    parogeneratorSPI.show();         // выводим изменения
+    digitalWrite(parogeneratorPin, HIGH); 
   };  
   if (command.indexOf("?turnOnNasos") > -1)
   {
@@ -56,6 +53,11 @@ void runCommand(String command){
   {
       digitalWrite(lovushkaPin, HIGH); 
   };
+  if (command.indexOf("?turnOnReactorRed") > -1)
+  {
+    reactorSPI.fill(mRed);  // заливаем водой
+    reactorSPI.show();         // выводим изменения
+  }; 
   return;
 }
 

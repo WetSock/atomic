@@ -12,12 +12,15 @@ async def Demo(request):
     return render(request, 'atom_app/Demo/index.html')
 
 def Scenario2(request):
+    arduinoClient.asyncStart("Scenario2")
     return render(request, 'atom_app/Scenario2/index.html')
 
 def Scenario3(request):
+    arduinoClient.asyncStart("Scenario3")
     return render(request, 'atom_app/Scenario3/index.html')
 
 def Scenario4(request):
+    arduinoClient.asyncStart("Scenario4")
     return render(request, 'atom_app/Scenario4/index.html')
 
 async def Demo1(request):

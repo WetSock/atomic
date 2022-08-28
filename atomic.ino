@@ -13,8 +13,8 @@ String controlString;
 #define NUMLEDS 10      // кол-во светодиодов на лентах
 #define COLOR_DEBTH 3
 #include <microLED.h>   // Для ленты
-microLED<NUMLEDS, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip1; // Лента 1
-microLED<NUMLEDS, 15, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip2; // Лента 2
+microLED<NUMLEDS, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> reactorSPI; // Лента 1
+microLED<NUMLEDS, 15, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> parogeneratorSPI; // Лента 2
 microLED<NUMLEDS, 16, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip3; // Лента 3
 
 const int parogeneratorPin = 3; // Парогенератор
@@ -75,17 +75,17 @@ void loop(){
 
 void setupSPI(){
   // задаем яркость лентам
-  strip1.setBrightness(100);
-  strip2.setBrightness(100);
+  reactorSPI.setBrightness(100);
+  parogeneratorSPI.setBrightness(100);
   strip3.setBrightness(100);
   // очистка буфера (выключить диоды на лентах, чёрный цвет)
-  strip1.clear();
-  strip2.clear();
+  reactorSPI.clear();
+  parogeneratorSPI.clear();
   strip3.clear();
   // применяется при выводе .show() !
 
-  strip1.show(); // вывод изменений на ленту
-  strip2.show(); // вывод изменений на ленту
+  reactorSPI.show(); // вывод изменений на ленту
+  parogeneratorSPI.show(); // вывод изменений на ленту
   strip3.show(); // вывод изменений на ленту
   return;
 }

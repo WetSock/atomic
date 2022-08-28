@@ -5,8 +5,16 @@ from threading import Thread
 
 class Arduino():
     arduinoCommands = ["turnOff",
-                        "setAqua",
-                        "setYellow"]
+                        "turnOnMainLight",
+                        "turnOnReactor",
+                        "turnOnParogenerator",
+                        "turnOnNasos",
+                        "turnOnSaoz",
+                        "turnOnSpzaz",
+                        "turnOnKompensator",
+                        "turnOnBarboter",
+                        "turnOnLovushka",
+                        "turnOnReactorRed"]
                         
 
     def asyncStart(self, scenario: str):
@@ -19,42 +27,54 @@ class Arduino():
         
         if scenario == "Demo":
             asyncio.run(self.sendArduinoCommand("turnOff"))
+            asyncio.run(self.sendArduinoCommand("turnOnMainLight"))
         if scenario == "Demo1":
             # Выключить всё, а затем включить нужные штуки
             asyncio.run(self.sendArduinoCommand("turnOff"))
-            asyncio.run(self.sendArduinoCommand("setAqua"))
+            asyncio.run(self.sendArduinoCommand("turnOnReactor"))
         if scenario == "Demo2":
             # Выключить всё, а затем включить нужные штуки
             asyncio.run(self.sendArduinoCommand("turnOff"))
-            asyncio.run(self.sendArduinoCommand("setYellow"))
+            asyncio.run(self.sendArduinoCommand("turnOnParogenerator"))
         if scenario == "Demo3":
             # Выключить всё, а затем включить нужные штуки
             asyncio.run(self.sendArduinoCommand("turnOff"))
-            asyncio.run(self.sendArduinoCommand("setYellow"))
+            asyncio.run(self.sendArduinoCommand("turnOnNasos"))
         if scenario == "Demo4":
             # Выключить всё, а затем включить нужные штуки
             asyncio.run(self.sendArduinoCommand("turnOff"))
-            asyncio.run(self.sendArduinoCommand("setYellow"))
+            asyncio.run(self.sendArduinoCommand("turnOnSaoz"))
         if scenario == "Demo5":
             # Выключить всё, а затем включить нужные штуки
             asyncio.run(self.sendArduinoCommand("turnOff"))
-            asyncio.run(self.sendArduinoCommand("setYellow"))
+            asyncio.run(self.sendArduinoCommand("turnOnSpzaz"))
         if scenario == "Demo6":
             # Выключить всё, а затем включить нужные штуки
             asyncio.run(self.sendArduinoCommand("turnOff"))
-            asyncio.run(self.sendArduinoCommand("setYellow"))
+            asyncio.run(self.sendArduinoCommand("turnOnKompensator"))
         if scenario == "Demo7":
             # Выключить всё, а затем включить нужные штуки
             asyncio.run(self.sendArduinoCommand("turnOff"))
-            asyncio.run(self.sendArduinoCommand("setYellow"))
+            asyncio.run(self.sendArduinoCommand("turnOnBarboter"))
         if scenario == "Demo8":
             # Выключить всё, а затем включить нужные штуки
             asyncio.run(self.sendArduinoCommand("turnOff"))
-            asyncio.run(self.sendArduinoCommand("setYellow"))
         if scenario == "Demo9":
             # Выключить всё, а затем включить нужные штуки
             asyncio.run(self.sendArduinoCommand("turnOff"))
-            asyncio.run(self.sendArduinoCommand("setYellow"))
+            asyncio.run(self.sendArduinoCommand("turnOnLovushka"))
+        if scenario == "Scenario2":
+            # Выключить всё, а затем включить нужные штуки
+            asyncio.run(self.sendArduinoCommand("turnOff"))
+            asyncio.run(self.sendArduinoCommand("turnOnReactorRed"))
+        if scenario == "Scenario3":
+            # Выключить всё, а затем включить нужные штуки
+            asyncio.run(self.sendArduinoCommand("turnOff"))
+            asyncio.run(self.sendArduinoCommand("turnOnLovushka"))
+        if scenario == "Scenario4":
+            # Выключить всё, а затем включить нужные штуки
+            asyncio.run(self.sendArduinoCommand("turnOff"))
+            asyncio.run(self.sendArduinoCommand("turnOnLovushka"))
         return
 
     async def sendArduinoCommand(self, command: str):
