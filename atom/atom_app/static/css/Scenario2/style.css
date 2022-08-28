@@ -1,3 +1,11 @@
+body {
+    color: white;
+    font-family: Rosatom;
+    font-size: 30px;
+    display: grid;
+    grid-template-columns: 300px 1fr 250px;
+  }  
+
 a{
   color: white;
   font-size: 40px;
@@ -18,11 +26,13 @@ a{
 }
 
 
-.content{
-    padding: 300px;
-    padding-top: 35%;
-    padding-bottom: 20%;
-}
+.content {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    padding: 100px;
+  }
 
 .content-header{
     width: 100%;

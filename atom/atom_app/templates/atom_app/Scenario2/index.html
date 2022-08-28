@@ -2,27 +2,51 @@
 {%load static%}
 <html>
 <head>
-    <link rel="stylesheet" href="{% static 'css/Scenario2/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Scenario2/style.css' %}">
 </head>
 <body style="background-color:black;">
-    <div class="main-back" style="background: url('{%static 'images/pattern.png' %}') no-repeat; background-size: 100% 100%;">
-        <div class="logo">
-          <img id="logoButton" src="{% static 'images/logo_white.png' %}">
-        </div>
+    <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
+        background-size: 100% 100%; 
+        background-color: rgba(0, 50, 116, 0.8);
+        background-blend-mode: darken;">
+        <div class="centered">
+            <div id="main">
+                <div class="logo">
+                    <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+                </div>
+                <div class="main-text">
+                    <p><h1>Демонстрация устойчивой работы ЯППУ</h1></p>
 
-
-        <div class="content">
-
-            <div class="content-align-center">
-              <a href="../Scenario3/index.html" class="button">Демонстрация изменения мощности</a>
-      
-              <a href="../Scenario4/index.html" class="button">Демонстрация аварии – обесточивания ЯППУ</a>
+                </div>
             </div>
-            <div class="return">
-                <input id="returnButton" type="image" src="{% static 'images/backButton.png' %}" onclick="history.back()"/>
+        </div>
+        <div class="split down" style="width: 70%; height: 20%">
+            <div class="content-align-center">
+                <a href="../Scenario3/index.html" class="button">Демонстрация изменения мощности</a>
+        
+                <a href="../Scenario4/index.html" class="button">Демонстрация аварии – обесточивания ЯППУ</a>
             </div>
         </div>
     </div>
+
+    <div class="split right" style="background: url('{%static 'images/pattern.png' %}') no-repeat; 
+        background-size: 100% 100%;
+        background-color: rgba(108, 172, 228, 0.7);
+        background-blend-mode: lighten;">
+        <div class="split up">
+            <div class="centered">
+                <img src="{% static 'images/reactor/AX6A8656_resize.JPG' %}" alt="Avatar man">
+                <img src="{% static 'images/reactor/AX6A9694.JPG' %}" alt="Avatar man">
+                <img src="{% static 'images/reactor/info.png' %}" alt="Avatar man">
+            </div>
+        </div>
+        <div class="split down">
+            <div class="return">
+                <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';"/>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

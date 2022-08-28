@@ -8,7 +8,6 @@ body {
 
 .split {
   height: 100%;
-  width: 30%;
   position: fixed;
   z-index: 1;
   padding-top: 20px;
@@ -23,20 +22,19 @@ body {
 
 .right {
   width: 30%;
-  right: 0;
+  right: 0%;
   top: 0%;
 }
 
 .up {
-  position: fixed;
   height: 90%;
   top: 0%;
   overflow-y: scroll;
 }
 
 .down {
-  position: fixed;
   height: 10%;
+  width: 30%;
   bottom: 0%;
 }
 
