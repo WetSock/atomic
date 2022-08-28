@@ -7,18 +7,13 @@ class Arduino():
     arduinoCommands = ["turnOff",
                         "setAqua",
                         "setYellow"]
-    def __init__(self):
-        self.demoThread = Thread(target=self.arduinoScenario, args=("Demo",))
-        self.demoThread1 = Thread(target=self.arduinoScenario, args=("Demo1",))
-        self.demoThread2 = Thread(target=self.arduinoScenario, args=("Demo2",))
-        self.demoThread3 = Thread(target=self.arduinoScenario, args=("Demo3",))
-        self.demoThread4 = Thread(target=self.arduinoScenario, args=("Demo4",))
-        self.demoThread5 = Thread(target=self.arduinoScenario, args=("Demo5",))
-        self.demoThread6 = Thread(target=self.arduinoScenario, args=("Demo6",))
-        self.demoThread7 = Thread(target=self.arduinoScenario, args=("Demo7",))
-        self.demoThread8 = Thread(target=self.arduinoScenario, args=("Demo8",))
-        self.demoThread9 = Thread(target=self.arduinoScenario, args=("Demo9",))
+                        
 
+    def asyncStart(self, scenario: str):
+        demoThread = Thread(target=self.arduinoScenario, args=(scenario,))
+        demoThread.start()
+        return
+        
 
     def arduinoScenario(self, scenario: str):
         
