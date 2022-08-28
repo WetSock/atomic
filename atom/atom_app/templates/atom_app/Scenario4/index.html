@@ -2,22 +2,43 @@
 {%load static%}
 <html>
 <head>
-    <link rel="stylesheet" href="{% static 'css/Scenario2/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
 </head>
 <body style="background-color:black;">
-    <div class="main-back" style="background: url('{%static 'images/pattern.png' %}') no-repeat; background-size: 100% 100%;">
-        <div class="logo">
-          <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+
+    <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
+      background-size: 100% 100%; 
+      background-color: rgba(0, 50, 116, 0.8);
+      background-blend-mode: darken;">
+        <div class="centered">
+            <div id="main">
+                <div class="logo">
+                    <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+                </div>
+                <div class="main-text">
+                    <p><h1>Демонстрация аварии – обесточивания ЯППУ</h1></p>
+
+                    <p>Пожалуйста, обратите внимание на макет</p>
+
+                </div>
+            </div>
         </div>
+    </div>
 
+    <div class="split right" style="background: url('{%static 'images/pattern.png' %}') no-repeat; 
+        background-size: 100% 100%;
+        background-color: rgba(108, 172, 228, 0.7);
+        background-blend-mode: lighten;">
+        <div class="split up">
+            <div class="centered">
 
-        <div class="content">
-    
-            <p style="color:white;font-size:40px;">Демонстрация аварии – обесточивания ЯППУ</p>
-
-            <div class="return">
-                <input id="returnButton" type="image" src="{% static 'images/backButton.png' %}" onclick="history.back()"/>
+            </div>
+        </div>
+        <div class="split down">
+            <div class="content">
+                <div class="return">
+                    <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/Scenario2/index.html';"/>
+                </div>
             </div>
         </div>
     </div>

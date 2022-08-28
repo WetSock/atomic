@@ -2,23 +2,50 @@
 {%load static%}
 <html>
 <head>
-    <link rel="stylesheet" href="{% static 'css/Scenario2/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Scenario3/range.css' %}">
 </head>
 <body style="background-color:black;">
-    <div class="main-back" style="background: url('{%static 'images/pattern.png' %}') no-repeat; background-size: 100% 100%;">
-        <div class="logo">
-          <img id="logoButton" src="{% static 'images/logo_white.png' %}">
-        </div>
-    
-        <p style="color:white;font-size:40px;">Демонстрация изменения мощности</p>
 
-        <div class="content">
-            <div>
-                Уровень мощности
+    <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
+      background-size: 100% 100%; 
+      background-color: rgba(0, 50, 116, 0.8);
+      background-blend-mode: darken;">
+        <div class="split up" style="width: 70%; height: 70%">
+            <div class="centered">
+                <div id="main">
+                    <div class="logo">
+                        <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+                    </div>
+                    <div class="main-text">
+                        <p><h1>Демонстрация изменения мощности</h1></p>
+
+                        <p>Пожалуйста, обратите внимание на макет</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="split down" style="width: 70%; height: 30%">
+            <div class="main-text">
+                <p>Уровень мощности</p>
                 <input id="input-range" type="range" min="0" max="100" value="35">
-            <div class="return">
-                    <input id="returnButton" type="image" src="{% static 'images/backButton.png' %}" onclick="history.back()"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="split right" style="background: url('{%static 'images/pattern.png' %}') no-repeat; 
+        background-size: 100% 100%;
+        background-color: rgba(108, 172, 228, 0.7);
+        background-blend-mode: lighten;">
+        <div class="split up">
+            <div class="centered">
+            </div>
+        </div>
+        <div class="split down">
+            <div class="content">
+                <div class="return">
+                    <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/Scenario2/index.html';"/>
                 </div>
             </div>
         </div>
