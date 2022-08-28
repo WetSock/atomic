@@ -17,8 +17,15 @@ microLED<NUMLEDS, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip1; //
 microLED<NUMLEDS, 15, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip2; // Лента 2
 microLED<NUMLEDS, 16, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip3; // Лента 3
 
-const int allDiods[] = {3, 4, 5, 6, 7, 8, 9}; // Все диоды
-const int mainLight[] = {3, 4}; // Основная подсветка
+const int parogeneratorPin = 3; // Парогенератор
+const int nasosPin = 4; // ГЦН Главный циркуляционный насосный агрегат
+const int saozPin = 5; // Гидроёмкости САОЗ
+const int spzazPin = 6; // Гидроёмкости СПЗАЗ
+const int kompensatorPin = 7; // Компенсатор давления
+const int barboterPin = 8; // Бак-барботёр
+const int lovushkaPin = 9; // Ловушка расплава
+const int mainPin = 13; // Основная подсветка
+const int allDiods[] = {3, 4, 5, 6, 7, 8, 9, 13}; // Все диоды
 
 void setup() {
   // Включаем управление диодами
