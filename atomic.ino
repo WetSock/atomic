@@ -10,53 +10,27 @@ EthernetServer server(80);
 String controlString;
 
 
-#define NUMLEDS 16      // кол-во светодиодов
+#define NUMLEDS 10      // кол-во светодиодов на лентах
 #define COLOR_DEBTH 3
 #include <microLED.h>   // Для ленты
-microLED<NUMLEDS, 3, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip;
-microLED<NUMLEDS, 4, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip4;
-microLED<NUMLEDS, 5, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip5;
-microLED<NUMLEDS, 6, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip6;
-microLED<NUMLEDS, 7, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip7;
+microLED<NUMLEDS, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip1; // Лента 1
+microLED<NUMLEDS, 15, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip2; // Лента 2
+microLED<NUMLEDS, 16, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip3; // Лента 3
 
-strips = [strip, strip4, strip5, strip6, strip7];
+const int allDiods[] = {3, 4, 5, 6, 7, 8, 9}; // Все диоды
+const int mainLight[] = {3, 4}; // Основная подсветка
 
 void setup() {
-  strip.setBrightness(90);
-  // яркость применяется по CRT гамме
-  // применяется при выводе .show() !
+  // Включаем управление диодами
+  int sizeOfArray = sizeof(allDiods) / sizeof(int);
+  for ( int index = 0 ; index < sizeOfArray ; ++index ){
+    pinMode(allDiods[index], OUTPUT); 
+    digitalWrite(allDiods[index], LOW); 
+  }  
+  
+  setupSPI();
 
-  // очистка буфера (выключить диоды, чёрный цвет)
-  strip.clear();
-  // применяется при выводе .show() !
-
-  strip.show(); // вывод изменений на ленту
-
-
-  // start the Ethernet connection and the server:
-  Ethernet.begin(mac, ip);
-
-  Serial.begin(9600);
-  Serial.println("Ethernet WebServer Example");
-
-  // start the Ethernet connection and the server:
-  Ethernet.begin(mac, ip);
-
-  // Check for Ethernet hardware present
-  if (Ethernet.hardwareStatus() == EthernetNoHardware) {
-    Serial.println("Ethernet shield was not found.  Sorry, can't run without hardware. :(");
-    while (true) {
-      delay(1); // do nothing, no point running without Ethernet hardware
-    }
-  }
-  if (Ethernet.linkStatus() == LinkOFF) {
-    Serial.println("Ethernet cable is not connected.");
-  }
-
-  // start the server
-  server.begin();
-  Serial.print("server is at ");
-  Serial.println(Ethernet.localIP());
+  setupEthernet();
 }
 
 void loop(){
@@ -82,7 +56,7 @@ void loop(){
           //stopping client
           client.stop();
           
-          runCommand(controlString)
+          runCommand(controlString);
           //clearing string for next read
           controlString="";
         
@@ -92,24 +66,47 @@ void loop(){
   }
 }
 
-void runCommand(command){
-  if(command.indexOf("?setAqua") > -1)
-  {
-    strip.fill(mAqua);  // заливаем водой
-    strip.show();         // выводим изменения
-  }
-  if(command.indexOf("?setYellow") > -1)
-  {
-    strip.fill(mYellow);  // заливаем НЕ водой
-    strip.show();         // выводим изменения
-  }
-  if(command.indexOf("?turnOff") > -1) 
-  {
-    strip.clear();  // Выключаем
-    strip.show();         // выводим изменения
-  }
+void setupSPI(){
+  // задаем яркость лентам
+  strip1.setBrightness(100);
+  strip2.setBrightness(100);
+  strip3.setBrightness(100);
+  // очистка буфера (выключить диоды на лентах, чёрный цвет)
+  strip1.clear();
+  strip2.clear();
+  strip3.clear();
+  // применяется при выводе .show() !
+
+  strip1.show(); // вывод изменений на ленту
+  strip2.show(); // вывод изменений на ленту
+  strip3.show(); // вывод изменений на ленту
+  return;
 }
 
-void splitParams(params){
-  
+void setupEthernet(){
+    // start the Ethernet connection and the server:
+  Ethernet.begin(mac, ip);
+
+  Serial.begin(9600);
+  Serial.println("Ethernet WebServer Example");
+
+  // start the Ethernet connection and the server:
+  Ethernet.begin(mac, ip);
+
+  // Check for Ethernet hardware present
+  if (Ethernet.hardwareStatus() == EthernetNoHardware) {
+    Serial.println("Ethernet shield was not found.  Sorry, can't run without hardware. :(");
+    while (true) {
+      delay(1); // do nothing, no point running without Ethernet hardware
+    }
+  }
+  if (Ethernet.linkStatus() == LinkOFF) {
+    Serial.println("Ethernet cable is not connected.");
+  }
+
+  // start the server
+  server.begin();
+  Serial.print("server is at ");
+  Serial.println(Ethernet.localIP());
+  return;
 }
