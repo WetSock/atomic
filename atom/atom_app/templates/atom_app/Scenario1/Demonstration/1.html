@@ -11,12 +11,14 @@
       background-size: 100% 100%; 
       background-color: rgba(0, 50, 116, 0.8);
       background-blend-mode: darken;">
-        <div class="centered">
-            <div id="main">
-                <div class="logo">
-                    <img id="logoButton" src="{% static 'images/logo_white.png' %}">
-                </div>
-                <div class="main-text">
+        <div id="main">
+            <div class="logo">
+                <img id="logoButton" src="{% static 'images/logo_white.png' %}">
+            </div>
+
+
+            <div class="main-text">                    
+                <div id="alterText">
                     <p><h1>Реактор</h1></p>
 
                     <p>Реактор - изделие первого класса безопасности, представляет собой вертикальный цилиндрический корпус с эллиптическим днищем. Внутри изделия размещается активная зона и внутрикорпусные устройства. Сверху корпус герметично закрыт крышкой с установленными на ней приводами механизмов и органов регулирования и защиты, патрубками для вывода кабелей датчиков внутриреакторного контроля.</p>
@@ -26,7 +28,12 @@
                     <p><h3>Новейшая модель реактора - ВВЭР-ТОИ</h3></p>
                     <p>ВВЭР-ТОИ (типовой оптимизированный, информатизированный) — логическое развитие энергоблоков поколения 3+ и эволюционный шаг в совершенствовании конструкции корпусов реакторов для реакторных установок большой мощности.  Данный тип реакторной установки предусматривает увеличение габаритов обечайки активной зоны корпуса реактора, применение усовершенствованных сварочных материалов, а также оптимизацию конструкции парогенераторов. в отличие от корпуса реактора ВВЭР-1200, в нем уменьшено количество сварных соединений с шести до четырех – исключены сварные соединения в активной зоне. Это снижает радиационное воздействие на швы и улучшает эксплуатационные характеристики изделия.</p>
                 </div>
-          </div>
+                <video id="alterVideo" autoplay muted loop>
+                    <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">
+                </video>          
+                <img id="alterPicture" src="{% static 'images/reactor/AX6A8656_resize.JPG' %}">
+
+            </div>
         </div>
     </div>
 
@@ -49,11 +56,11 @@
 
             <div class="centered">
                 <video autoplay muted loop id="myVideo">
-                <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">
+                    <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">
                 </video>
-                <img src="{% static 'images/reactor/AX6A8656_resize.JPG' %}" alt="Avatar man">
-                <img src="{% static 'images/reactor/AX6A9694.JPG' %}" alt="Avatar man">
-                <img src="{% static 'images/reactor/info.png' %}" alt="Avatar man">
+                <input type="image" src="{% static 'images/reactor/AX6A8656_resize.JPG' %}" onclick="openPicture('images/reactor/AX6A8656_resize.JPG')">
+                <input type="image" src="{% static 'images/reactor/AX6A9694.JPG' %}" onclick="openPicture('images/reactor/AX6A9694.JPG')">
+                <input type="image" src="{% static 'images/reactor/info.png' %}" onclick="openPicture('images/reactor/info.png')">
 
             </div>
         </div>
