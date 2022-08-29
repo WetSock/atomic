@@ -22,15 +22,15 @@ function myFunction2() {
 }
 
 function openNav() {
-    if (isClosedNav){
+    if (isClosedNav) {
         document.getElementById("mySidenav").style.width = "30%";
-        isClosedNav=false;
+        isClosedNav = false;
     } else {
         document.getElementById("mySidenav").style.width = "0";
-        isClosedNav=true;
+        isClosedNav = true;
     }
-  }
-  
+}
+
 function closeNav() {
-document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav").style.width = "0";
 }

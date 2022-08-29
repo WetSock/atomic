@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 {%load static%}
 <html>
-  <head>
+
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/Scenario1/sidenav.css' %}">
-  </head>
-  <body>
+    <link rel="stylesheet" href="{% static 'css/galleriaSlider.css' %}">
+</head>
+
+<body>
     <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
       background-size: 100% 100%; 
       background-color: rgba(0, 50, 116, 0.8);
       background-blend-mode: darken;">
-        <div id="main">
+        <div id="main" class="main">
             <div class="logo">
                 <img id="logoButton" src="{% static 'images/logo_white.png' %}">
             </div>
 
-
-            <div class="main-text">                    
+            <div class="main-text">
                 <div id="alterText">
-                    <p><h1>Реактор</h1></p>
+                    <p>
+                    <h1>Реактор</h1>
+                    </p>
 
-                    <p>Реактор - изделие первого класса безопасности, представляет собой вертикальный цилиндрический корпус с эллиптическим днищем. Внутри изделия размещается активная зона и внутрикорпусные устройства. Сверху корпус герметично закрыт крышкой с установленными на ней приводами механизмов и органов регулирования и защиты, патрубками для вывода кабелей датчиков внутриреакторного контроля.</p>
-                    <p>Реакторы ВВЭР (водо-водяные энергетические реакторы) типов 1200 и ТОИ, производимые АО "АЭМ-технологии", соответствуют всем требованиям МАГАТЭ в области безопасности.</p>
-                    <p>Ядерным топливом для реактора являются тепловыделяющие сборки (ТВС), состоящие из тепловыделяющих элементов (ТВЭЛов), содержащих таблетки из диоксида урана, слабообогащённого по 235-му изотопу. Регулирование мощности реактора осуществляется системой управления и защиты (СУЗ) — изменением положения в активной зоне кластеров из стержней с поглощающими элементами (трубками с карбидом бора), а также изменением концентрации борной кислоты в воде первого контура.</p>
-                    <p>Вода, циркулирующая через корпус реактора и активную зону, является теплоносителем, то есть переносит энергию от уранового топлива к парогенераторам и далее к турбине, вырабатывающей электричество. Также вода выполняет другую важную функцию – замедляет выделяющиеся в ходе цепной реакции нейтроны.</p>
-                    <p><h3>Новейшая модель реактора - ВВЭР-ТОИ</h3></p>
-                    <p>ВВЭР-ТОИ (типовой оптимизированный, информатизированный) — логическое развитие энергоблоков поколения 3+ и эволюционный шаг в совершенствовании конструкции корпусов реакторов для реакторных установок большой мощности.  Данный тип реакторной установки предусматривает увеличение габаритов обечайки активной зоны корпуса реактора, применение усовершенствованных сварочных материалов, а также оптимизацию конструкции парогенераторов. в отличие от корпуса реактора ВВЭР-1200, в нем уменьшено количество сварных соединений с шести до четырех – исключены сварные соединения в активной зоне. Это снижает радиационное воздействие на швы и улучшает эксплуатационные характеристики изделия.</p>
+                    <p>Реактор - изделие первого класса безопасности, представляет собой вертикальный цилиндрический
+                        корпус с эллиптическим днищем. Внутри изделия размещается активная зона и внутрикорпусные
+                        устройства. Сверху корпус герметично закрыт крышкой с установленными на ней приводами механизмов
+                        и органов регулирования и защиты, патрубками для вывода кабелей датчиков внутриреакторного
+                        контроля.</p>
+                    <p>Реакторы ВВЭР (водо-водяные энергетические реакторы) типов 1200 и ТОИ, производимые АО
+                        "АЭМ-технологии", соответствуют всем требованиям МАГАТЭ в области безопасности.</p>
+                    <p>Ядерным топливом для реактора являются тепловыделяющие сборки (ТВС), состоящие из тепловыделяющих
+                        элементов (ТВЭЛов), содержащих таблетки из диоксида урана, слабообогащённого по 235-му изотопу.
+                        Регулирование мощности реактора осуществляется системой управления и защиты (СУЗ) — изменением
+                        положения в активной зоне кластеров из стержней с поглощающими элементами (трубками с карбидом
+                        бора), а также изменением концентрации борной кислоты в воде первого контура.</p>
+                    <p>Вода, циркулирующая через корпус реактора и активную зону, является теплоносителем, то есть
+                        переносит энергию от уранового топлива к парогенераторам и далее к турбине, вырабатывающей
+                        электричество. Также вода выполняет другую важную функцию – замедляет выделяющиеся в ходе цепной
+                        реакции нейтроны.</p>
+                    <p>
+                    <h3>Новейшая модель реактора - ВВЭР-ТОИ</h3>
+                    </p>
+                    <p>ВВЭР-ТОИ (типовой оптимизированный, информатизированный) — логическое развитие энергоблоков
+                        поколения 3+ и эволюционный шаг в совершенствовании конструкции корпусов реакторов для
+                        реакторных установок большой мощности. Данный тип реакторной установки предусматривает
+                        увеличение габаритов обечайки активной зоны корпуса реактора, применение усовершенствованных
+                        сварочных материалов, а также оптимизацию конструкции парогенераторов. в отличие от корпуса
+                        реактора ВВЭР-1200, в нем уменьшено количество сварных соединений с шести до четырех – исключены
+                        сварные соединения в активной зоне. Это снижает радиационное воздействие на швы и улучшает
+                        эксплуатационные характеристики изделия.</p>
                 </div>
                 <video id="alterVideo" autoplay muted loop>
                     <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">
-                </video>          
+                </video>
                 <img id="alterPicture" src="{% static 'images/reactor/AX6A8656_resize.JPG' %}">
 
             </div>
@@ -58,9 +83,12 @@
                 <video autoplay muted loop id="myVideo">
                     <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">
                 </video>
-                <input type="image" src="{% static 'images/reactor/AX6A8656_resize.JPG' %}" onclick="openPicture('images/reactor/AX6A8656_resize.JPG')">
-                <input type="image" src="{% static 'images/reactor/AX6A9694.JPG' %}" onclick="openPicture('images/reactor/AX6A9694.JPG')">
-                <input type="image" src="{% static 'images/reactor/info.png' %}" onclick="openPicture('images/reactor/info.png')">
+                <input type="image" src="{% static 'images/reactor/AX6A8656_resize.JPG' %}"
+                    onclick="openPicture('images/reactor/AX6A8656_resize.JPG')">
+                <input type="image" src="{% static 'images/reactor/AX6A9694.JPG' %}"
+                    onclick="openPicture('images/reactor/AX6A9694.JPG')">
+                <input type="image" src="{% static 'images/reactor/info.png' %}"
+                    onclick="openPicture('images/reactor/info.png')">
 
             </div>
         </div>
@@ -69,16 +97,35 @@
                 <input id="menuButton" type="image" src="{% static 'images/menuu.png' %}" onclick="openNav()">
             </div>
             <div class="pause">
-                <input id="nextButton" type="image" src="{% static 'images/next.png' %}" onclick="location.href='/Demonstration/2.html';"/>
+                <input id="nextButton" type="image" src="{% static 'images/next.png' %}"
+                    onclick="location.href='/Demonstration/2.html';" />
             </div>
             <div class="return">
-                <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';"/>
+                <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/';" />
             </div>
         </div>
     </div>
 
     <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/Scenario1/galleriaSlider.js' %}"></script>
+    <script>
+        const data1 = [
 
+            {
+                type: 'video',
+                src: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
+                poster: '/static/images/reactor/AX6A8656_resize.JPG'
+            },
 
-  </body>
+            {
+                type: 'img',
+                src: '/static/images/reactor/AX6A8656_resize.JPG',
+                poster: '/static/images/reactor/AX6A8656_resize.JPG'
+            }
+        ]
+        installGalleriaSlider(data1)
+    </script>
+
+</body>
+
 </html>
