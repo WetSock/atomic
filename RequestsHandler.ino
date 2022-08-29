@@ -41,6 +41,9 @@ Array3 splitParams(String url, String delimeter = "&"){
 void runCommand(String command){
   if (command.indexOf("?turnOff") > -1) 
   {
+    reactorSPI.setBrightness(100);
+    parogeneratorSPI.setBrightness(100);
+    strip3.setBrightness(100);
     reactorSPI.clear();  // Выключаем
     parogeneratorSPI.clear();  // Выключаем
     strip3.clear();  // Выключаем
@@ -98,12 +101,20 @@ void runCommand(String command){
     reactorSPI.fill(mRed);  
     reactorSPI.show();         // выводим изменения
   }; 
+  if (command.indexOf("?turnOnParogeneratorWhite") > -1)
+  {
+    parogeneratorSPI.fill(mWhite);  
+    parogeneratorSPI.show();         // выводим изменения
+  }; 
   if (command.indexOf("?changePower") > -1)
   {
     String params[3] = splitParams(command).params;
     int power = params[1].toInt();
+    reactorSPI.setBrightness(power);
     parogeneratorSPI.setBrightness(power);
-    parogeneratorSPI.fill(mAqua); 
+    reactorSPI.fill(mRed); 
+    parogeneratorSPI.fill(mWhite); 
+    reactorSPI.show();         // выводим изменения
     parogeneratorSPI.show();         // выводим изменения
   }; 
   return;

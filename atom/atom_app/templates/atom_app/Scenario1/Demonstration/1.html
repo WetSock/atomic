@@ -80,15 +80,6 @@
             </div>
 
             <div class="centered">
-                <video autoplay muted loop id="myVideo">
-                    <source id="mySource" src="{%static 'media/reactor.mp4' %}" type="video/mp4">
-                </video>
-                <input type="image" src="{% static 'images/reactor/AX6A8656_resize.JPG' %}"
-                    onclick="openPicture('images/reactor/AX6A8656_resize.JPG')">
-                <input type="image" src="{% static 'images/reactor/AX6A9694.JPG' %}"
-                    onclick="openPicture('images/reactor/AX6A9694.JPG')">
-                <input type="image" src="{% static 'images/reactor/info.png' %}"
-                    onclick="openPicture('images/reactor/info.png')">
 
             </div>
         </div>
@@ -109,18 +100,31 @@
     <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/Scenario1/galleriaSlider.js' %}"></script>
     <script>
+        
         const data1 = [
 
             {
                 type: 'video',
-                src: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
-                poster: '/static/images/reactor/AX6A8656_resize.JPG'
+                src: '/static/media/reactor.mp4',
+                poster: '/static/images/reactor/reactor.png'
             },
 
             {
                 type: 'img',
                 src: '/static/images/reactor/AX6A8656_resize.JPG',
                 poster: '/static/images/reactor/AX6A8656_resize.JPG'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/reactor/AX6A9694.JPG',
+                poster: '/static/images/reactor/AX6A9694.JPG'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/reactor/info.png',
+                poster: '/static/images/reactor/info.png'
             }
         ]
         installGalleriaSlider(data1)

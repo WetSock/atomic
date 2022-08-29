@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
 <link rel="stylesheet" href="{% static 'css/Scenario1/sidenav.css' %}">
+<link rel="stylesheet" href="{% static 'css/galleriaSlider.css' %}">
 </head>
 <body>
     <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
@@ -43,10 +44,6 @@
                 <a href="/Demonstration/9.html">Ловушка расплава</a>
             </div>
             <div class="centered">
-                <img src="{% static 'images/mcpipes/Трубный узел-1.png' %}">      
-                <img src="{% static 'images/mcpipes/DSC_2220.JPG' %}" alt="Avatar man">
-                <img src="{% static 'images/mcpipes/ГЦТ 1.jpg' %}" alt="Avatar man">
-                <img src="{% static 'images/mcpipes/ГЦТ_без_фона.png' %}" alt="Avatar man">
             </div>
         </div>
         <div class="split down">
@@ -66,7 +63,41 @@
     </div>
 
     <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/Scenario1/galleriaSlider.js' %}"></script>
+    <img src="{% static 'images/mcpipes/Трубный узел-1.png' %}">      
+    <img src="{% static 'images/mcpipes/DSC_2220.JPG' %}" alt="Avatar man">
+    <img src="{% static 'images/mcpipes/ГЦТ 1.jpg' %}" alt="Avatar man">
+    <img src="{% static 'images/mcpipes/ГЦТ_без_фона.png' %}" alt="Avatar man">
+    <script>
+        
+        const data1 = [
 
+            {
+                type: 'img',
+                src: '/static/images/mcpipes/Трубный узел-1.png',
+                poster: '/static/images/mcpipes/Трубный узел-1.png'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/mcpipes/DSC_2220.JPG',
+                poster: '/static/images/mcpipes/DSC_2220.JPG'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/mcpipes/ГЦТ 1.jpg',
+                poster: '/static/images/mcpipes/ГЦТ 1.jpg'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/mcpipes/ГЦТ_без_фона.png',
+                poster: '/static/images/mcpipes/ГЦТ_без_фона.png'
+            }
+        ]
+        installGalleriaSlider(data1)
+    </script>
 
 </body>
 </html>
