@@ -32,7 +32,7 @@ function installGalleriaSlider(data = []) {
 		galleriaItem.setAttribute('galleria', index)
 
 		if (item.type === 'img') {
-			galleriaItem.innerHTML = `<img src="${item.src}" class='galleria__item-img' alt="">`
+			galleriaItem.innerHTML = `<img src="${item.src}"  loading='eager' class='galleria__item-img' alt="">`
 		}
 
 		if (item.type === 'video') {
