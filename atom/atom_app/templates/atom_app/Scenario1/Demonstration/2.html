@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
 <link rel="stylesheet" href="{% static 'css/Scenario1/sidenav.css' %}">
+<link rel="stylesheet" href="{% static 'css/galleriaSlider.css' %}">
 </head>
 <body>
     <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
@@ -42,12 +43,7 @@
             </div>
 
             <div class="centered">
-                <video autoplay muted loop id="myVideo">
-                    <source id="mySource" src="{%static 'media/parogenerator.mp4' %}" type="video/mp4">
-                </video>
-                <img src="{% static 'images/generator/AX6A6878rd_resize.jpg' %}" alt="Avatar man">
-                <img src="{% static 'images/generator/AX6A9895rd.jpg' %}" alt="Avatar man">
-                <img src="{% static 'images/generator/DSZ_2729.jpg' %}" alt="Avatar man">
+
             </div>
         </div>
         <div class="split down">
@@ -67,7 +63,37 @@
     </div>
 
   <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/Scenario1/galleriaSlider.js' %}"></script>
+  <script>
+      
+      const data1 = [
 
+          {
+              type: 'video',
+              src: '/static/media/parogenerator.mp4',
+              poster: '/static/images/generator/parogenerator.png'
+          },
+
+          {
+              type: 'img',
+              src: '/static/images/generator/AX6A6878rd_resize.jpg',
+              poster: '/static/images/generator/AX6A6878rd_resize.jpg'
+          },
+
+          {
+              type: 'img',
+              src: '/static/images/generator/AX6A9895rd.jpg',
+              poster: '/static/images/generator/AX6A9895rd.jpg'
+          },
+
+          {
+              type: 'img',
+              src: '/static/images/generator/DSZ_2729.jpg',
+              poster: '/static/images/generator/DSZ_2729.jpg'
+          }
+      ]
+      installGalleriaSlider(data1)
+  </script>
 
 </body>
 </html>

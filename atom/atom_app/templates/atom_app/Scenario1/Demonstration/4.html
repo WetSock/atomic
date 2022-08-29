@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
 <link rel="stylesheet" href="{% static 'css/Scenario1/sidenav.css' %}">
+<link rel="stylesheet" href="{% static 'css/galleriaSlider.css' %}">
 </head>
 <body>
     <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
@@ -39,10 +40,6 @@
                 <a href="/Demonstration/9.html">Ловушка расплава</a>
             </div>
             <div class="centered">
-                <img src="{% static 'images/САОЗ-gydro/Схема САОЗ-1.png' %}">
-                <img src="{% static 'images/САОЗ-gydro/DSC05218.jpg' %}" alt="Avatar man">
-                <img src="{% static 'images/САОЗ-gydro/САОЗ 1.JPG' %}" alt="Avatar man">
-                <img src="{% static 'images/САОЗ-gydro/САОЗ 3.JPG' %}" alt="Avatar man">
             </div>        
         </div>
 
@@ -64,7 +61,37 @@
     </div>
 
     <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/Scenario1/galleriaSlider.js' %}"></script>
+    <script>
+        
+        const data1 = [
 
+            {
+                type: 'img',
+                src: '/static/images/САОЗ-gydro/Схема САОЗ-1.png',
+                poster: '/static/images/САОЗ-gydro/Схема САОЗ-1.png'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/САОЗ-gydro/DSC05218.jpg',
+                poster: '/static/images/САОЗ-gydro/DSC05218.jpg'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/САОЗ-gydro/САОЗ 1.JPG',
+                poster: '/static/images/САОЗ-gydro/САОЗ 1.JPG'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/САОЗ-gydro/САОЗ 3.JPG',
+                poster: '/static/images/САОЗ-gydro/САОЗ 3.JPG'
+            }
+        ]
+        installGalleriaSlider(data1)
+    </script>
 
 </body>
 </html>

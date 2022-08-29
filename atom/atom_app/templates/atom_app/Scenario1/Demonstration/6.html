@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'css/Scenario1/style.css' %}">
 <link rel="stylesheet" href="{% static 'css/Scenario1/sidenav.css' %}">
+<link rel="stylesheet" href="{% static 'css/galleriaSlider.css' %}">
 </head>
 <body>
     <div class="split left" style="background: url('{%static 'images/pattern_mirrored.png' %}') no-repeat; 
@@ -43,10 +44,6 @@
                 <a href="/Demonstration/9.html">Ловушка расплава</a>
             </div>
             <div class="centered">
-                <img src="{% static 'images/pressure-kompensator/Схема КД-1.png' %}">
-                <img src="{% static 'images/pressure-kompensator/КД 1.jpg' %}" alt="Avatar man">
-                <img src="{% static 'images/pressure-kompensator/КД 2.jpg' %}" alt="Avatar man">
-                <img src="{% static 'images/pressure-kompensator/Компенсатор давления АМ110.04.00.000 (в сечении).JPG' %}" alt="Avatar man">
             </div>
         </div>
         <div class="split down">
@@ -66,7 +63,37 @@
     </div>
 
     <script type="text/javascript" src="{% static 'js/Scenario1/myscripts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/Scenario1/galleriaSlider.js' %}"></script>
+    <script>
+        
+        const data1 = [
 
+            {
+                type: 'img',
+                src: '/static/images/pressure-kompensator/Схема КД-1.png',
+                poster: '/static/images/pressure-kompensator/Схема КД-1.png'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/pressure-kompensator/КД 1.jpg',
+                poster: '/static/images/pressure-kompensator/КД 1.jpg'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/pressure-kompensator/КД 2.jpg',
+                poster: '/static/images/pressure-kompensator/КД 2.jpg'
+            },
+
+            {
+                type: 'img',
+                src: '/static/images/pressure-kompensator/Компенсатор давления АМ110.04.00.000 (в сечении).JPG',
+                poster: '/static/images/pressure-kompensator/Компенсатор давления АМ110.04.00.000 (в сечении).JPG'
+            }
+        ]
+        installGalleriaSlider(data1)
+    </script>
 
 </body>
 </html>
