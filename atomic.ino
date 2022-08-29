@@ -10,7 +10,7 @@ EthernetServer server(80);
 String controlString;
 
 
-#define NUMLEDS 10      // кол-во светодиодов на лентах
+#define NUMLEDS 13      // кол-во светодиодов на лентах
 #define COLOR_DEBTH 3
 #include <microLED.h>   // Для ленты
 microLED<NUMLEDS, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> reactorSPI; // Лента 1
