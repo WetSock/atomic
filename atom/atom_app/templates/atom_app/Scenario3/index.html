@@ -33,7 +33,7 @@
         <div class="split down" style="width: 70%; height: 30%">
             <div class="main-text">
                 <p>Уровень мощности</p>
-                <input id="input-range" step="1" type="range" min="0" max="100" value="35">
+                <input id="input-range" step="1" type="range" min="0" max="250" value="35">
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
 
             function serverRequest(value) {
                 console.log(value);
-                fetch(`http://192.168.2.202/?command=changePower&power=${value}`)
+                fetch(`http://192.168.2.202/?changePower&${value}&`)
             }
 
             var timer = null
@@ -71,7 +71,7 @@
 
                 timer = setTimeout(() => {
                     serverRequest(value)
-                }, 500)
+                }, 50)
 
             }
 
