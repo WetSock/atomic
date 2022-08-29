@@ -26,7 +26,6 @@ function installGalleriaSlider(data = []) {
 
 	document.querySelector('.galleria__item-list-wrapper').append(closeBtn)
 
-
 	data.forEach((item, index) => {
 		let galleriaItem = document.createElement("div")
 		galleriaItem.classList.add('galleria__item');
@@ -66,11 +65,22 @@ function installGalleriaSlider(data = []) {
 		galleriaWrapper.classList.add('active')
 		galleriaList.children[currentIndex].classList.add('active')
 		galleriaPreviewList.children[currentIndex].classList.add('active')
+
+		const videoTag = galleriaList.children[currentIndex].querySelector('video')
+		if (videoTag) {
+			setTimeout(() => {
+				videoTag.play()
+			}, 1000);
+		}
 	}
 
 	function removeActiveItem() {
 
 		Array.from(galleriaList.children).forEach((item, index) => {
+			const videoTag = item.querySelector('video')
+			if (videoTag) {
+				videoTag.load()
+			}
 			item.classList.remove('active')
 		})
 		Array.from(galleriaPreviewList.children).forEach((item, index) => {
@@ -95,6 +105,7 @@ function installGalleriaSlider(data = []) {
 	galleriaPreviewList.addEventListener('click', setActiveItem)
 	galleriaList.addEventListener('click', setActiveItem)
 	closeBtn.addEventListener('click', closeModal)
+
 
 }
 
