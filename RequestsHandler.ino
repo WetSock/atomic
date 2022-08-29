@@ -1,3 +1,43 @@
+
+struct Array3 {
+    String params[3];
+};
+
+Array3 splitParams(String url, String delimeter = "&"){
+
+    Serial.print("Обрабатываю запрос: ");
+    Serial.println(url);
+
+    // Убираем всё до параметров
+    int start = url.indexOf("?");
+    String params = url.substring(start + 1, url.length());
+
+    // Заполняем всё в массив
+    Array3 result;
+
+    start = 0;
+    int end = params.indexOf(delimeter);
+    int index = 0;
+    while (end != -1) {
+        result.params[index] = params.substring(start, end);
+        Serial.print("Нашел параметр: ");
+        Serial.println(result.params[index]);
+
+        start = end + 1;
+        end = params.indexOf(delimeter, start);
+        index++;
+    }
+
+    result.params[index] = params.substring(start, end);
+    Serial.print("Нашел параметр: ");
+    Serial.println(result.params[index]);
+
+    
+
+    return result;
+}
+
+
 void runCommand(String command){
   if (command.indexOf("?turnOff") > -1) 
   {
@@ -55,12 +95,16 @@ void runCommand(String command){
   };
   if (command.indexOf("?turnOnReactorRed") > -1)
   {
-    reactorSPI.fill(mRed);  // заливаем водой
+    reactorSPI.fill(mRed);  
     reactorSPI.show();         // выводим изменения
   }; 
+  if (command.indexOf("?changePower") > -1)
+  {
+    String params[3] = splitParams(command).params;
+    int power = params[1].toInt();
+    parogeneratorSPI.setBrightness(power);
+    parogeneratorSPI.fill(mAqua); 
+    parogeneratorSPI.show();         // выводим изменения
+  }; 
   return;
-}
-
-void splitParams(String params){
-  
 }
