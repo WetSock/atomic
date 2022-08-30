@@ -27,10 +27,11 @@
 
     <div class="split right" style="background-color: rgb(108, 172, 228);">
         <div class="split down">
-            <div class="content">
-                <div class="return">
-                    <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/Scenario2/index.html';"/>
-                </div>
+            <audio autoplay>
+                <source src="{% static 'media/avaria.mpeg' %}" type="audio/mpeg">
+              </audio>
+            <div class="return">
+                <input id="homeButton" type="image" src="{% static 'images/home.png' %}" onclick="location.href='/Scenario2/index.html';"/>
             </div>
         </div>
     </div>
