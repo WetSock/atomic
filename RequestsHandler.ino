@@ -41,10 +41,12 @@ Array3 splitParams(String url, String delimeter = "&"){
 void runCommand(String command){
   if (command.indexOf("?turnOff") > -1) 
   {
+    isParogenerate = false;
     reactorSPI.setBrightness(100);
     parogeneratorSPI.setBrightness(100);
     reactorSPI.clear();  // Выключаем
     parogeneratorSPI.clear();  // Выключаем
+    strip3.clear();   // выводим изменения
     reactorSPI.show();   // выводим изменения
     parogeneratorSPI.show();   // выводим изменения
     strip3.show();   // выводим изменения
@@ -68,6 +70,7 @@ void runCommand(String command){
   {
     parogeneratorSPI.fill(mWhite); 
     parogeneratorSPI.show();         // выводим изменения
+    isParogenerate = true;
     digitalWrite(parogeneratorPin, HIGH); 
   };  
   if (command.indexOf("?turnOnNasos") > -1)
@@ -103,6 +106,7 @@ void runCommand(String command){
   {
     parogeneratorSPI.fill(mWhite);  
     parogeneratorSPI.show();         // выводим изменения
+    isParogenerate = true;
   }; 
   if (command.indexOf("?changePower") > -1)
   {
@@ -110,8 +114,6 @@ void runCommand(String command){
     int power = params[1].toInt();
     reactorSPI.setBrightness(power);
     parogeneratorSPI.setBrightness(power);
-    reactorSPI.fill(mRed); 
-    parogeneratorSPI.fill(mWhite); 
     reactorSPI.show();         // выводим изменения
     parogeneratorSPI.show();         // выводим изменения
   }; 
@@ -127,8 +129,10 @@ void parogenerate(){
     myGrad.colors[4] = mBlack;
 
     for (int i = 0; i < NUMLEDS; i++) {
-      strip3.leds[i] = myGrad.get(inoise8(i * 20, countNoise), 255);
+      parogeneratorSPI.leds[i] = myGrad.get(inoise8(i * 20, countNoise), 255);
     }
     countNoise += 5; // Скорость, с которой меняется оттенок пара
-    strip3.show();
+    if (isParogenerate){ // Вдруг уже прервали парогенерацию?
+      parogeneratorSPI.show();
+    }
 }

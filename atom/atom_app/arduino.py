@@ -71,8 +71,6 @@ class Arduino():
             asyncio.run(self.sendArduinoCommand("turnOnReactorRed"))
             asyncio.run(self.sendArduinoCommand("turnOnParogeneratorWhite"))
         if scenario == "Scenario3":
-            # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
             asyncio.run(self.sendArduinoCommandWithParam("changePower","90"))
         if scenario == "Scenario4":
             # Выключить всё, а затем включить нужные штуки
