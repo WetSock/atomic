@@ -13,6 +13,7 @@ String controlString;
 #define NUMLEDS 13      // кол-во светодиодов на лентах
 #define COLOR_DEBTH 3
 #include <microLED.h>   // Для ленты
+#include <FastLEDsupport.h>
 microLED<NUMLEDS, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> reactorSPI; // Лента 1
 microLED<NUMLEDS, 15, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> parogeneratorSPI; // Лента 2
 microLED<NUMLEDS, 16, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip3; // Лента 3
@@ -26,6 +27,10 @@ const int barboterPin = 8; // Бак-барботёр
 const int lovushkaPin = 9; // Ловушка расплава
 const int mainPin = 13; // Основная подсветка
 const int allDiods[] = {3, 4, 5, 6, 7, 8, 9, 13}; // Все диоды
+bool isParogenerate = true;
+unsigned long previousParogenerateTime = 0;
+const int parogeneRate = 40; // Частота изменения парогенерации в миллисекундах
+int countNoise = 0;
 
 void setup() {
   // Включаем управление диодами
@@ -41,6 +46,12 @@ void setup() {
 }
 
 void loop(){
+
+  if (isParogenerate && ((previousParogenerateTime + parogeneRate) < millis())) {
+    previousParogenerateTime = millis();
+
+    parogenerate();
+  }
   // Create a client connection
   EthernetClient client = server.available();
   if (client) {
@@ -77,7 +88,7 @@ void setupSPI(){
   // задаем яркость лентам
   reactorSPI.setBrightness(100);
   parogeneratorSPI.setBrightness(100);
-  strip3.setBrightness(100);
+  strip3.setBrightness(250);
   // очистка буфера (выключить диоды на лентах, чёрный цвет)
   reactorSPI.clear();
   parogeneratorSPI.clear();

@@ -43,10 +43,8 @@ void runCommand(String command){
   {
     reactorSPI.setBrightness(100);
     parogeneratorSPI.setBrightness(100);
-    strip3.setBrightness(100);
     reactorSPI.clear();  // Выключаем
     parogeneratorSPI.clear();  // Выключаем
-    strip3.clear();  // Выключаем
     reactorSPI.show();   // выводим изменения
     parogeneratorSPI.show();   // выводим изменения
     strip3.show();   // выводим изменения
@@ -63,12 +61,12 @@ void runCommand(String command){
   };  
   if (command.indexOf("?turnOnReactor") > -1)
   {
-    reactorSPI.fill(mWhite);  // заливаем водой
+    reactorSPI.fill(mAqua);
     reactorSPI.show();         // выводим изменения
   };  
   if (command.indexOf("?turnOnParogenerator") > -1)
   {
-    parogeneratorSPI.fill(mWhite);  // заливаем водой
+    parogeneratorSPI.fill(mWhite); 
     parogeneratorSPI.show();         // выводим изменения
     digitalWrite(parogeneratorPin, HIGH); 
   };  
@@ -118,4 +116,19 @@ void runCommand(String command){
     parogeneratorSPI.show();         // выводим изменения
   }; 
   return;
+}
+
+void parogenerate(){
+    mGradient<5> myGrad;
+    myGrad.colors[0] = mBlack;
+    myGrad.colors[1] = mWhite;
+    myGrad.colors[2] = mBlack;
+    myGrad.colors[3] = mWhite;
+    myGrad.colors[4] = mBlack;
+
+    for (int i = 0; i < NUMLEDS; i++) {
+      strip3.leds[i] = myGrad.get(inoise8(i * 20, countNoise), 255);
+    }
+    countNoise += 5; // Скорость, с которой меняется оттенок пара
+    strip3.show();
 }
