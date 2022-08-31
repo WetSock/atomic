@@ -37,7 +37,7 @@ function installGalleriaSlider(data = []) {
 
 		if (item.type === 'video') {
 			galleriaItem.innerHTML = `
-				<video class="galleria__item-video" width="100%" poster="${item.poster}"> <source src="${item.src}" /> </video>`
+				<video class="galleria__item-video" width="100%" poster="${item.poster}" pointer-events="none"> <source src="${item.src}" /> </video>`
 		}
 
 		galleriaList.append(galleriaItem)
