@@ -10,13 +10,13 @@ EthernetServer server(80);
 String controlString;
 
 
-#define NUMLEDS 13      // кол-во светодиодов на лентах
+#define PARONUMLEDS 15      // кол-во светодиодов на лентах
 #define COLOR_DEBTH 3
 #include <microLED.h>   // Для ленты
 #include <FastLEDsupport.h>
-microLED<NUMLEDS, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> reactorSPI; // Лента 1
-microLED<NUMLEDS, 15, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> parogeneratorSPI; // Лента 2
-microLED<NUMLEDS, 16, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> strip3; // Лента 3
+microLED<16, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> reactorSPI; // Лента 1
+microLED<PARONUMLEDS, 15, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> parogeneratorSPI; // Лента 2
+microLED<3, 16, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> gznSPI; // Лента 3
 
 const int parogeneratorPin = 3; // Парогенератор
 const int nasosPin = 4; // ГЦН Главный циркуляционный насосный агрегат
@@ -88,16 +88,16 @@ void setupSPI(){
   // задаем яркость лентам
   reactorSPI.setBrightness(100);
   parogeneratorSPI.setBrightness(100);
-  strip3.setBrightness(250);
+  gznSPI.setBrightness(250);
   // очистка буфера (выключить диоды на лентах, чёрный цвет)
   reactorSPI.clear();
   parogeneratorSPI.clear();
-  strip3.clear();
+  gznSPI.clear();
   // применяется при выводе .show() !
 
   reactorSPI.show(); // вывод изменений на ленту
   parogeneratorSPI.show(); // вывод изменений на ленту
-  strip3.show(); // вывод изменений на ленту
+  gznSPI.show(); // вывод изменений на ленту
   return;
 }
 

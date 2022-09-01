@@ -46,10 +46,10 @@ void runCommand(String command){
     parogeneratorSPI.setBrightness(100);
     reactorSPI.clear();  // Выключаем
     parogeneratorSPI.clear();  // Выключаем
-    strip3.clear();   // выводим изменения
+    gznSPI.clear();   // выводим изменения
     reactorSPI.show();   // выводим изменения
     parogeneratorSPI.show();   // выводим изменения
-    strip3.show();   // выводим изменения
+    gznSPI.show();   // выводим изменения
 
     int sizeOfArray = sizeof(allDiods) / sizeof(int);
     for ( int index = 0 ; index < sizeOfArray ; ++index ){
@@ -128,7 +128,7 @@ void parogenerate(){
     myGrad.colors[3] = mWhite;
     myGrad.colors[4] = mBlack;
 
-    for (int i = 0; i < NUMLEDS; i++) {
+    for (int i = 0; i < PARONUMLEDS; i++) {
       parogeneratorSPI.leds[i] = myGrad.get(inoise8(i * 20, countNoise), 255);
     }
     countNoise += 5; // Скорость, с которой меняется оттенок пара
