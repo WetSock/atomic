@@ -10,11 +10,11 @@ EthernetServer server(80);
 String controlString;
 
 
-#define PARONUMLEDS 15      // кол-во светодиодов на лентах
+#define PARONUMLEDS 30      // кол-во светодиодов на лентах
 #define COLOR_DEBTH 3
 #include <microLED.h>   // Для ленты
 #include <FastLEDsupport.h>
-microLED<16, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> reactorSPI; // Лента 1
+microLED<29, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> reactorSPI; // Лента 1
 microLED<PARONUMLEDS, 15, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> parogeneratorSPI; // Лента 2
 microLED<3, 16, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> gznSPI; // Лента 3
 
@@ -28,7 +28,9 @@ const int lovushkaPin = 9; // Ловушка расплава
 const int mainPin = 13; // Основная подсветка
 const int allDiods[] = {3, 4, 5, 6, 7, 8, 9, 13}; // Все диоды
 bool isParogenerate = false;
+bool isAvaria = false;
 unsigned long previousParogenerateTime = 0;
+unsigned long previousAvariaTime = 0;
 const int parogeneRate = 40; // Частота изменения парогенерации в миллисекундах
 int countNoise = 0;
 
@@ -51,6 +53,13 @@ void loop(){
     previousParogenerateTime = millis();
 
     parogenerate();
+  }
+  if (isAvaria && ((previousAvariaTime + 600) < millis())) { // C момента аварии прошло время
+    // Выключаем ГЦН
+    gznSPI.clear();
+    gznSPI.show();
+
+    isAvaria = false;
   }
   // Create a client connection
   EthernetClient client = server.available();

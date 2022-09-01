@@ -17,7 +17,8 @@ class Arduino():
                         "turnOnReactorRed",
                         "turnOnParogeneratorWhite",
                         "turnOnGZNAqua",
-                        "changePower"]
+                        "changePower",
+                        "avaria"]
                         
 
     def asyncStart(self, scenario: str):
@@ -75,9 +76,7 @@ class Arduino():
         if scenario == "Scenario3":
             asyncio.run(self.sendArduinoCommandWithParam("changePower","90"))
         if scenario == "Scenario4":
-            # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
-            asyncio.run(self.sendArduinoCommandWithParam("changePower","250"))
+            asyncio.run(self.sendArduinoCommand("avaria"))
         return
 
     async def sendArduinoCommand(self, command: str):

@@ -124,6 +124,18 @@ void runCommand(String command){
     reactorSPI.show();         // выводим изменения
     parogeneratorSPI.show();         // выводим изменения
   }; 
+  if (command.indexOf("?avaria") > -1)
+  {
+    gznOverdrive();
+
+    parogeneratorSPI.setBrightness(250);
+    parogeneratorSPI.show();         // выводим изменения
+    reactorSPI.setBrightness(250);
+    reactorSPI.show();         // выводим изменения
+
+    isAvaria = true;
+    previousAvariaTime = millis();
+  }; 
   return;
 }
 
@@ -143,3 +155,12 @@ void parogenerate(){
       parogeneratorSPI.show();
     }
 }
+
+
+void gznOverdrive(){
+    gznSPI.setBrightness(250);
+    gznSPI.fill(mAqua);  
+    gznSPI.show();   
+
+}
+
