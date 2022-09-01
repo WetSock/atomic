@@ -42,8 +42,6 @@ void runCommand(String command){
   if (command.indexOf("?turnOff") > -1) 
   {
     isParogenerate = false;
-    reactorSPI.setBrightness(100);
-    parogeneratorSPI.setBrightness(100);
     reactorSPI.clear();  // Выключаем
     parogeneratorSPI.clear();  // Выключаем
     gznSPI.clear();   // выводим изменения
@@ -63,7 +61,8 @@ void runCommand(String command){
   };  
   if (command.indexOf("?turnOnReactor") > -1)
   {
-    reactorSPI.fill(mAqua);
+    reactorSPI.setBrightness(100);
+    reactorSPI.fill(mRed);
     reactorSPI.show();         // выводим изменения
   };  
   if (command.indexOf("?turnOnParogenerator") > -1)
@@ -99,14 +98,22 @@ void runCommand(String command){
   };
   if (command.indexOf("?turnOnReactorRed") > -1)
   {
+    reactorSPI.setBrightness(100);
     reactorSPI.fill(mRed);  
     reactorSPI.show();         // выводим изменения
   }; 
   if (command.indexOf("?turnOnParogeneratorWhite") > -1)
   {
+    parogeneratorSPI.setBrightness(100);
     parogeneratorSPI.fill(mWhite);  
     parogeneratorSPI.show();         // выводим изменения
     isParogenerate = true;
+  }; 
+  if (command.indexOf("?turnOnGZNAqua") > -1)
+  {
+    gznSPI.setBrightness(100);
+    gznSPI.fill(mAqua);  
+    gznSPI.show();         // выводим изменения
   }; 
   if (command.indexOf("?changePower") > -1)
   {

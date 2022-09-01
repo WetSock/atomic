@@ -16,6 +16,7 @@ class Arduino():
                         "turnOnLovushka",
                         "turnOnReactorRed",
                         "turnOnParogeneratorWhite",
+                        "turnOnGZNAqua",
                         "changePower"]
                         
 
@@ -70,6 +71,7 @@ class Arduino():
             asyncio.run(self.sendArduinoCommand("turnOff"))
             asyncio.run(self.sendArduinoCommand("turnOnReactorRed"))
             asyncio.run(self.sendArduinoCommand("turnOnParogeneratorWhite"))
+            asyncio.run(self.sendArduinoCommand("turnOnGZNAqua"))
         if scenario == "Scenario3":
             asyncio.run(self.sendArduinoCommandWithParam("changePower","90"))
         if scenario == "Scenario4":
