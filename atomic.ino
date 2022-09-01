@@ -31,8 +31,11 @@ bool isParogenerate = false;
 bool isAvaria = false;
 unsigned long previousParogenerateTime = 0;
 unsigned long previousAvariaTime = 0;
+unsigned long avariaStartTime = 0;
 const int parogeneRate = 40; // Частота изменения парогенерации в миллисекундах
+const int crashRate = 20; // Частота изменения аварийных элементов в миллисекундах
 int countNoise = 0;
+int avariaStep = 0;
 
 void setup() {
   // Включаем управление диодами
@@ -54,12 +57,11 @@ void loop(){
 
     parogenerate();
   }
-  if (isAvaria && ((previousAvariaTime + 600) < millis())) { // C момента аварии прошло время
-    // Выключаем ГЦН
-    gznSPI.clear();
-    gznSPI.show();
+  if (isAvaria) { // Идёт авария
 
-    isAvaria = false;
+    if ((previousAvariaTime + crashRate) < millis()) {
+      avariaLoop();
+    }
   }
   // Create a client connection
   EthernetClient client = server.available();

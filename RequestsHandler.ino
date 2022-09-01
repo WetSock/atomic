@@ -42,6 +42,7 @@ void runCommand(String command){
   if (command.indexOf("?turnOff") > -1) 
   {
     isParogenerate = false;
+    isAvaria = false;
     reactorSPI.clear();  // Выключаем
     parogeneratorSPI.clear();  // Выключаем
     gznSPI.clear();   // выводим изменения
@@ -133,8 +134,8 @@ void runCommand(String command){
     reactorSPI.setBrightness(250);
     reactorSPI.show();         // выводим изменения
 
+    avariaStep = 0;
     isAvaria = true;
-    previousAvariaTime = millis();
   }; 
   return;
 }
@@ -156,11 +157,30 @@ void parogenerate(){
     }
 }
 
+void avariaLoop(){
+    avariaStep += 1;
+
+    if (avariaStep == 30) { // Спустя какое-то время с начала аварии
+      // Выключаем ГЦН
+      gznSPI.clear();
+      gznSPI.show();   
+    }
+
+    if (avariaStep < 250) {
+      // постепенно уменьшаем яркость
+      parogeneratorSPI.setBrightness(250 - avariaStep);
+      parogeneratorSPI.show();         // выводим изменения
+      reactorSPI.setBrightness(250 - avariaStep);
+      reactorSPI.show();         // выводим изменения
+    } else {
+      isAvaria = false;
+    }
+}
+
 
 void gznOverdrive(){
     gznSPI.setBrightness(250);
     gznSPI.fill(mAqua);  
     gznSPI.show();   
-
 }
 
