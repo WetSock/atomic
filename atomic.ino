@@ -16,7 +16,7 @@ String controlString;
 #include <FastLEDsupport.h>
 microLED<29, 14, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> reactorSPI; // Лента 1
 microLED<PARONUMLEDS, 15, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> parogeneratorSPI; // Лента 2
-microLED<3, 16, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> gznSPI; // Лента 3
+microLED<5, 16, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_AVER> gznSPI; // Лента 3
 
 const int parogeneratorPin = 3; // Парогенератор
 const int nasosPin = 4; // ГЦН Главный циркуляционный насосный агрегат
