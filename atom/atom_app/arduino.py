@@ -30,49 +30,50 @@ class Arduino():
     def arduinoScenario(self, scenario: str):
         
         if scenario == "Demo":
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            
             asyncio.run(self.sendArduinoCommand("turnOnMainLight"))
         if scenario == "Demo1":
             # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            
             asyncio.run(self.sendArduinoCommand("turnOnReactor"))
         if scenario == "Demo2":
             # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            
             asyncio.run(self.sendArduinoCommand("turnOnParogenerator"))
         if scenario == "Demo3":
             # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            
             asyncio.run(self.sendArduinoCommand("turnOnNasos"))
         if scenario == "Demo4":
             # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            
             asyncio.run(self.sendArduinoCommand("turnOnSaoz"))
         if scenario == "Demo5":
             # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            
             asyncio.run(self.sendArduinoCommand("turnOnSpzaz"))
         if scenario == "Demo6":
             # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            
             asyncio.run(self.sendArduinoCommand("turnOnKompensator"))
         if scenario == "Demo7":
             # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            
             asyncio.run(self.sendArduinoCommand("turnOnBarboter"))
         if scenario == "Demo8":
             # Выключить всё, а затем включить нужные штуки
             asyncio.run(self.sendArduinoCommand("turnOff"))
+            
         if scenario == "Demo9":
             # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            
             asyncio.run(self.sendArduinoCommand("turnOnLovushka"))
         if scenario == "Scenario2":
             # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            
             asyncio.run(self.sendArduinoCommand("turnOnReactorRed"))
-            asyncio.run(self.sendArduinoCommand("turnOnParogeneratorWhite"))
-            asyncio.run(self.sendArduinoCommand("turnOnGZNAqua"))
+            # asyncio.run(self.sendArduinoCommand("turnOnParogeneratorWhite"))
+            # asyncio.run(self.sendArduinoCommand("turnOnGZNAqua"))
         if scenario == "Scenario3":
             asyncio.run(self.sendArduinoCommandWithParam("changePower","90"))
         if scenario == "Scenario4":

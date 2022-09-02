@@ -58,16 +58,19 @@ void runCommand(String command){
   };
   if (command.indexOf("?turnOnMainLight") > -1)
   {
+      turnOff();
       digitalWrite(mainPin, HIGH); 
   };  
   if (command.indexOf("?turnOnReactor") > -1)
   {
+    turnOff();
     reactorSPI.setBrightness(100);
     reactorSPI.fill(mRed);
     reactorSPI.show();         // выводим изменения
   };  
   if (command.indexOf("?turnOnParogenerator") > -1)
   {
+    turnOff();
     parogeneratorSPI.fill(mWhite); 
     parogeneratorSPI.show();         // выводим изменения
     isParogenerate = true;
@@ -75,33 +78,49 @@ void runCommand(String command){
   };  
   if (command.indexOf("?turnOnNasos") > -1)
   {
+      turnOff();
+      gznSPI.fill(mAqua); 
+      gznSPI.show();   
       digitalWrite(nasosPin, HIGH); 
   };  
   if (command.indexOf("?turnOnSaoz") > -1)
   {
+      turnOff();
       digitalWrite(saozPin, HIGH); 
   };  
   if (command.indexOf("?turnOnSpzaz") > -1)
   {
+      turnOff();
       digitalWrite(spzazPin, HIGH); 
   };  
   if (command.indexOf("?turnOnKompensator") > -1)
   {
+      turnOff();
       digitalWrite(kompensatorPin, HIGH); 
   };
   if (command.indexOf("?turnOnBarboter") > -1)
   {
+      turnOff();
       digitalWrite(barboterPin, HIGH); 
   };
   if (command.indexOf("?turnOnLovushka") > -1)
   {
+      turnOff();
       digitalWrite(lovushkaPin, HIGH); 
   };
   if (command.indexOf("?turnOnReactorRed") > -1)
   {
-    reactorSPI.setBrightness(100);
-    reactorSPI.fill(mRed);  
-    reactorSPI.show();         // выводим изменения
+      turnOff();
+      reactorSPI.setBrightness(100);
+      reactorSPI.fill(mRed);  
+      reactorSPI.show();         // выводим изменения
+      gznSPI.setBrightness(100);
+      gznSPI.fill(mAqua);  
+      gznSPI.show();    
+      parogeneratorSPI.setBrightness(100);
+      parogeneratorSPI.fill(mWhite);  
+      parogeneratorSPI.show();         // выводим изменения
+      isParogenerate = true;
   }; 
   if (command.indexOf("?turnOnParogeneratorWhite") > -1)
   {
@@ -184,3 +203,19 @@ void gznOverdrive(){
     gznSPI.show();   
 }
 
+void turnOff(){
+    isParogenerate = false;
+    isAvaria = false;
+    reactorSPI.clear();  // Выключаем
+    parogeneratorSPI.clear();  // Выключаем
+    gznSPI.clear();   // выводим изменения
+    reactorSPI.show();   // выводим изменения
+    parogeneratorSPI.show();   // выводим изменения
+    gznSPI.show();   // выводим изменения
+
+    int sizeOfArray = sizeof(allDiods) / sizeof(int);
+    for ( int index = 0 ; index < sizeOfArray ; ++index ){
+      pinMode(allDiods[index], OUTPUT); 
+      digitalWrite(allDiods[index], LOW); 
+    }  
+}
