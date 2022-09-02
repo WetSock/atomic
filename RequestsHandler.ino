@@ -74,7 +74,6 @@ void runCommand(String command){
     parogeneratorSPI.fill(mWhite); 
     parogeneratorSPI.show();         // выводим изменения
     isParogenerate = true;
-    digitalWrite(parogeneratorPin, HIGH); 
   };  
   if (command.indexOf("?turnOnNasos") > -1)
   {
