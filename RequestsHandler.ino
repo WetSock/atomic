@@ -64,6 +64,7 @@ void runCommand(String command){
   if (command.indexOf("?turnOnReactor") > -1)
   {
     turnOff();
+    digitalWrite(mainPin, HIGH); 
     reactorSPI.setBrightness(100);
     reactorSPI.fill(mRed);
     reactorSPI.show();         // выводим изменения
@@ -71,6 +72,7 @@ void runCommand(String command){
   if (command.indexOf("?turnOnParogenerator") > -1)
   {
     turnOff();
+      digitalWrite(mainPin, HIGH); 
     parogeneratorSPI.fill(mWhite); 
     parogeneratorSPI.show();         // выводим изменения
     isParogenerate = true;
@@ -78,6 +80,7 @@ void runCommand(String command){
   if (command.indexOf("?turnOnNasos") > -1)
   {
       turnOff();
+      digitalWrite(mainPin, HIGH); 
       gznSPI.fill(mAqua); 
       gznSPI.show();   
       digitalWrite(nasosPin, HIGH); 
@@ -85,11 +88,13 @@ void runCommand(String command){
   if (command.indexOf("?turnOnSaoz") > -1)
   {
       turnOff();
+      digitalWrite(mainPin, HIGH); 
       digitalWrite(saozPin, HIGH); 
   };  
   if (command.indexOf("?turnOnSpzaz") > -1)
   {
       turnOff();
+      digitalWrite(mainPin, HIGH); 
       spzazSPI.fill(mAqua); 
       spzazSPI.show();   
       digitalWrite(spzazPin, HIGH); 
@@ -97,27 +102,32 @@ void runCommand(String command){
   if (command.indexOf("?turnOnKompensator") > -1)
   {
       turnOff();
+      digitalWrite(mainPin, HIGH); 
       digitalWrite(kompensatorPin, HIGH); 
   };
   if (command.indexOf("?turnOnBarboter") > -1)
   {
       turnOff();
+      digitalWrite(mainPin, HIGH); 
       digitalWrite(barboterPin, HIGH); 
   };
   if (command.indexOf("?turnOnTruboprovod") > -1)
   {
       turnOff();
+      digitalWrite(mainPin, HIGH); 
       trubaSPI.fill(mAqua); 
       trubaSPI.show();
   };
   if (command.indexOf("?turnOnLovushka") > -1)
   {
       turnOff();
+      digitalWrite(mainPin, HIGH); 
       digitalWrite(lovushkaPin, HIGH); 
   };
   if (command.indexOf("?turnOnReactorRed") > -1)
   {
       turnOff();
+      digitalWrite(mainPin, HIGH); 
       reactorSPI.setBrightness(100);
       reactorSPI.fill(mRed);  
       reactorSPI.show();         // выводим изменения
