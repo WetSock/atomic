@@ -39,6 +39,8 @@ const int parogeneRate = 40; // Частота изменения пароген
 const int crashRate = 20; // Частота изменения аварийных элементов в миллисекундах
 int countNoise = 0;
 int avariaStep = 0;
+int currentSpzazDiod = 0;
+int currentBrightness = 0;
 
 void setup() {
   // Включаем управление диодами
@@ -62,6 +64,7 @@ void loop(){
   }
   if (isAvaria) { // Идёт авария
     if ((previousAvariaTime + crashRate) < millis()) {
+      previousAvariaTime = millis();
       avariaLoop();
     }
   }

@@ -123,7 +123,10 @@ void runCommand(String command){
       reactorSPI.show();         // выводим изменения
       gznSPI.setBrightness(100);
       gznSPI.fill(mAqua);  
-      gznSPI.show();    
+      gznSPI.show();
+      spzazSPI.setBrightness(100);
+      spzazSPI.fill(mAqua); 
+      spzazSPI.show();       
       parogeneratorSPI.setBrightness(100);
       parogeneratorSPI.fill(mWhite);  
       parogeneratorSPI.show();         // выводим изменения
@@ -159,7 +162,11 @@ void runCommand(String command){
     parogeneratorSPI.show();         // выводим изменения
     reactorSPI.setBrightness(250);
     reactorSPI.show();         // выводим изменения
+    trubaSPI.fill(mAqua); 
+    trubaSPI.show();
 
+    currentSpzazDiod = 0;
+    currentBrightness = 0;
     avariaStep = 0;
     isAvaria = true;
   }; 
@@ -192,15 +199,27 @@ void avariaLoop(){
       gznSPI.show();   
     }
 
-    if (avariaStep < 250) {
-      // постепенно уменьшаем яркость
-      parogeneratorSPI.setBrightness(250 - avariaStep);
-      parogeneratorSPI.show();         // выводим изменения
-      reactorSPI.setBrightness(250 - avariaStep);
-      reactorSPI.show();         // выводим изменения
-    } else {
-      isAvaria = false;
+    if (avariaStep % 50 == 0) {
+      // постепенно отключаем спзаз
+      if (currentSpzazDiod < SPZAZNUMLEDS) {
+        spzazSPI.leds[currentSpzazDiod] = mRGB(0, 0, 0);
+        spzazSPI.show();  
+        currentSpzazDiod += 1;
+      }
     }
+
+    if (avariaStep % 4 == 0) {
+      if (currentBrightness < 250) {
+        // постепенно уменьшаем яркость
+        parogeneratorSPI.setBrightness(250 - currentBrightness);
+        parogeneratorSPI.show();         // выводим изменения
+        reactorSPI.setBrightness(250 - currentBrightness);
+        reactorSPI.show();         // выводим изменения
+        currentBrightness +=1;
+      } else {
+        isAvaria = false;
+      }
+    } 
 }
 
 
