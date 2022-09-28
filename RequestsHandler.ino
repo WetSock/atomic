@@ -90,6 +90,8 @@ void runCommand(String command){
   if (command.indexOf("?turnOnSpzaz") > -1)
   {
       turnOff();
+      spzazSPI.fill(mAqua); 
+      spzazSPI.show();   
       digitalWrite(spzazPin, HIGH); 
   };  
   if (command.indexOf("?turnOnKompensator") > -1)
@@ -101,6 +103,12 @@ void runCommand(String command){
   {
       turnOff();
       digitalWrite(barboterPin, HIGH); 
+  };
+  if (command.indexOf("?turnOnTruboprovod") > -1)
+  {
+      turnOff();
+      trubaSPI.fill(mAqua); 
+      trubaSPI.show();
   };
   if (command.indexOf("?turnOnLovushka") > -1)
   {
@@ -208,9 +216,13 @@ void turnOff(){
     reactorSPI.clear();  // Выключаем
     parogeneratorSPI.clear();  // Выключаем
     gznSPI.clear();   // выводим изменения
+    spzazSPI.clear();
+    trubaSPI.clear();
     reactorSPI.show();   // выводим изменения
     parogeneratorSPI.show();   // выводим изменения
     gznSPI.show();   // выводим изменения
+    spzazSPI.show();   
+    trubaSPI.show();   
 
     int sizeOfArray = sizeof(allDiods) / sizeof(int);
     for ( int index = 0 ; index < sizeOfArray ; ++index ){

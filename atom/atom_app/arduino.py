@@ -13,6 +13,7 @@ class Arduino():
                         "turnOnSpzaz",
                         "turnOnKompensator",
                         "turnOnBarboter",
+                        "turnOnTruboprovod",
                         "turnOnLovushka",
                         "turnOnReactorRed",
                         "turnOnParogeneratorWhite",
@@ -62,7 +63,7 @@ class Arduino():
             asyncio.run(self.sendArduinoCommand("turnOnBarboter"))
         if scenario == "Demo8":
             # Выключить всё, а затем включить нужные штуки
-            asyncio.run(self.sendArduinoCommand("turnOff"))
+            asyncio.run(self.sendArduinoCommand("turnOnTruboprovod"))
             
         if scenario == "Demo9":
             # Выключить всё, а затем включить нужные штуки
