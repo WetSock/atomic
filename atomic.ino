@@ -58,7 +58,6 @@ void loop(){
     parogenerate();
   }
   if (isAvaria) { // Идёт авария
-
     if ((previousAvariaTime + crashRate) < millis()) {
       avariaLoop();
     }
@@ -80,6 +79,7 @@ void loop(){
         //if HTTP request has ended– 0x0D is Carriage Return \n ASCII
         if (c == 0x0D) {
           client.println("{ result: \"" + controlString + "\" }");
+          Serial.println(controlString);
           
           delay(10);
           //stopping client
